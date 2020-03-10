@@ -98,6 +98,7 @@ h3 {
     width: 180px;
     height: 180px;
     border-radius: 50%;
+    filter: drop-shadow(0 0 0.5rem #000000bb);
 }
 
 
@@ -200,5 +201,5 @@ h3 {
 }
 
 a:hover {
-    filter: drop-shadow(0 0 0.5rem #ffffff);
+    filter: drop-shadow(0 0 0.5rem #ffffffbb);
 }
