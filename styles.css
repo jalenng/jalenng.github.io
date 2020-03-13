@@ -24,7 +24,7 @@ a:hover {
 	filter: drop-shadow(0 0 0.5rem #ffffffbb);
 }
 
-h2, h3 {
+h3 {
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 }
@@ -246,11 +246,18 @@ h2, h3 {
 
 .post h2 {
 	margin: 0;
+	letter-spacing: 0.05em;
+}
+
+.post-author-image {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
 }
 
 .post-title {
 	margin-bottom: 0;
-	font-size: 18px;
+	font-size: 20px;
 }
 
 .post-date {
