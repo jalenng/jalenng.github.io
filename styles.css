@@ -7,6 +7,28 @@
 	#header-title-text span {
 		display: none;
 	}
+
+	.grid-container {
+		grid-template-columns: 50% 50%;
+	}
+}
+@media screen and (min-width:600px) {
+
+	.grid-container {
+		grid-template-columns: 33% 33% 33%;
+	}
+}
+@media screen and (min-width:800px) {
+
+	.grid-container {
+		grid-template-columns: 25% 25% 25% 25%;
+	}
+}
+@media screen and (min-width:1000px) {
+
+	.grid-container {
+		grid-template-columns: 20% 20% 20% 20% 20%;
+	}
 }
 
 body {
@@ -119,7 +141,7 @@ h3 {
 .bg-img {
 	margin: 0;
 	background-image: url('background.jpg');
-	filter: blur(10px) brightness(0.67);
+	filter: blur(10px) brightness(0.5);
 	height: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -140,7 +162,6 @@ h3 {
 
 .grid-container {
 	display: grid;
-	grid-template-columns: 33% 33% 33%;
 	grid-column-gap: 5px;
 	grid-row-gap: 5px;
 	margin: 10px auto;
@@ -203,13 +224,13 @@ h3 {
 	margin: 10px auto;
 }
 
-.socials {
+.contact {
 	display: block;
 	line-height: 3em;
 	margin-left: -40px;
 }
 
-.socials-button {
+.contact-button {
 	padding: 5px 10px;
 	border-radius: 3px;
 	color: #ffffff;
@@ -218,20 +239,20 @@ h3 {
 	text-decoration: none;
 }
 
-.socials-button-image {
+.contact-button-image {
 	max-width: 28px;
 	max-height: 28px;
 	vertical-align: middle;
 	margin: -6px 5px 0 -5px;
 }
 
-.socials-button-text {
+.contact-button-text {
 	text-transform: uppercase;
 	font-weight: 600;
 	letter-spacing: 0.1em;
 }
 
-.socials-button-subtext {
+.contact-button-subtext {
 	text-transform: none;
 	font-family: 'Source Code Pro', sans-serif;
 	letter-spacing: 0.0em;
@@ -242,6 +263,7 @@ h3 {
 	padding: 10px;
 	border-radius: 3px;
 	background-color: #3c3c3cab;
+	margin: 15px auto;
 }
 
 .post h2 {
@@ -250,21 +272,29 @@ h3 {
 }
 
 .post-author-image {
-	width: 36px;
-	height: 36px;
-	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	border-radius: 3px;
+	vertical-align: middle;
+	margin-right: 3px;
+}
+
+.post-author-name {
+	vertical-align: middle;
 }
 
 .post-title {
-	margin-bottom: 0;
+	margin-top: 10px;
 	font-size: 20px;
 }
 
 .post-date {
-	display: inline;
+	display: inline-block;
 	border-radius: 3px;
 	text-transform: uppercase;
+	margin-top: 5px;
 	padding: 1px 5px;
+	letter-spacing: 0.05em;
 	background-color: white;
 	color: black;
 }
