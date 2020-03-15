@@ -126,6 +126,14 @@ h3 {
 	background-color: #4875B4;
 }
 
+#facebook-button {
+	background-color: #1877f2;
+}
+
+#instagram-button {
+	background-color: #C13584;
+}
+
 #ball {
 	position: absolute;
 	visibility: hidden;
@@ -220,7 +228,7 @@ h3 {
 	font-family: 'Source Code Pro', sans-serif;
 	letter-spacing: 0.0em;
 	font-weight: 100;
-	font-size: 1.5em;
+	font-size: 1.25em;
 	margin: 10px auto;
 }
 
@@ -240,10 +248,10 @@ h3 {
 }
 
 .contact-button-image {
-	max-width: 28px;
-	max-height: 28px;
+	max-width: 26px;
+	max-height: 26px;
 	vertical-align: middle;
-	margin: -6px 5px 0 -5px;
+	margin: 0px 10px 5px 0px;
 }
 
 .contact-button-text {
@@ -269,6 +277,10 @@ h3 {
 .post h2 {
 	margin: 0;
 	letter-spacing: 0.05em;
+}
+
+.post-author{
+	text-decoration: none;
 }
 
 .post-author-image {
