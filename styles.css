@@ -225,6 +225,12 @@ h3 {
 	display: block;
 	line-height: 3em;
 	margin-left: -40px;
+	margin-bottom: 30px;
+}
+
+.contact li {
+	display: inline;
+	margin: 0px 10px 0px 0px;
 }
 
 .contact-button {
@@ -234,6 +240,7 @@ h3 {
 	background-color: #ad7670;
 	font-size: 18px;
 	text-decoration: none;
+	white-space: nowrap;
 }
 
 .contact-button-image {
@@ -253,6 +260,34 @@ h3 {
 	text-transform: none;
 	font-family: 'Source Code Pro', sans-serif;
 	letter-spacing: 0.0em;
+}
+
+.repository {
+	margin-bottom: 30px;
+}
+
+.carousel-cell {
+	text-decoration: none;
+	margin: auto 12px auto 0px;
+	padding: 5px 10px 5px 10px;
+	width: 240px; /* full width */
+	height: 160px; /* height of carousel */
+	border-radius: 5px;
+	background-color: #3c3c3cab;
+}
+
+.carousel-cell-header {
+	margin: 0px;
+	font-size: 28px;
+	white-space:nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.carousel-cell-subheader {
+	margin: 0px;
+	font-size: 16px;
+	font-style: italic;
 }
 
 .post {
