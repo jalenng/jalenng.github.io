@@ -266,14 +266,43 @@ h3 {
 	margin-bottom: 30px;
 }
 
-.carousel-cell {
+.carousel-cell, .carousel-cell-archived {
 	text-decoration: none;
 	margin: auto 12px auto 0px;
 	padding: 5px 10px 5px 10px;
 	width: 240px; /* full width */
-	height: 160px; /* height of carousel */
+	height: 170px; /* height of carousel */
 	border-radius: 5px;
+	
+}
+
+.carousel-cell {
+	color: #ccccff;
 	background-color: #3c3c3cab;
+}
+
+.carousel-cell-archived {
+	color: #676781;
+	background-color: #302f2fab;
+}
+
+.carousel-cell-status, .carousel-cell-archived-status {
+	display: inline-block;
+	border-radius: 3px;
+	text-transform: uppercase;
+	margin-top: 5px;
+	padding: 1px 5px;
+	letter-spacing: 0.05em;
+	color: black;
+}
+
+
+.carousel-cell-status {
+	background-color: #ccccff;
+}
+
+.carousel-cell-archived-status {
+	background-color: #676781
 }
 
 .carousel-cell-header {
@@ -288,6 +317,13 @@ h3 {
 	margin: 0px;
 	font-size: 16px;
 	font-style: italic;
+}
+
+.carousel-cell-info {
+	word-wrap: break-word;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-height: 90px;
 }
 
 .post {
