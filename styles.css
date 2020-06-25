@@ -176,7 +176,7 @@ h3 {
 	display: inline;
 	padding: 10px;
 	border-radius: 3px;
-	background-color: #3c3c3cab;
+	background-color: #3c3c3cd5;
 }
 
 .grid-item-header {
@@ -273,12 +273,11 @@ h3 {
 	width: 240px; /* full width */
 	height: 170px; /* height of carousel */
 	border-radius: 5px;
-	
 }
 
 .carousel-cell {
 	color: #ccccff;
-	background-color: #3c3c3cab;
+	background-color: #3c3c3cd5;
 }
 
 .carousel-cell-archived {
@@ -290,10 +289,11 @@ h3 {
 	display: inline-block;
 	border-radius: 3px;
 	text-transform: uppercase;
-	margin-top: 5px;
-	padding: 1px 5px;
+	margin: 5px 0px 5px 0px;
+	padding: 0px 5px;
 	letter-spacing: 0.05em;
 	color: black;
+	font-weight: 600;
 }
 
 
@@ -302,7 +302,7 @@ h3 {
 }
 
 .carousel-cell-archived-status {
-	background-color: #676781
+	background-color: #676781;
 }
 
 .carousel-cell-header {
@@ -311,12 +311,6 @@ h3 {
 	white-space:nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-}
-
-.carousel-cell-subheader {
-	margin: 0px;
-	font-size: 16px;
-	font-style: italic;
 }
 
 .carousel-cell-info {
@@ -365,8 +359,9 @@ h3 {
 	border-radius: 3px;
 	text-transform: uppercase;
 	margin-top: 5px;
-	padding: 1px 5px;
+	padding: 0px 5px;
 	letter-spacing: 0.05em;
 	background-color: white;
 	color: black;
+	font-weight: 600;
 }
