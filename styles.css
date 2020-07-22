@@ -1,367 +1,375 @@
-@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
-@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+
 @media screen and (max-width:600px) {
-	#header-title-text span {
-		display: none;
-	}
+    #header-title-text span {
+        display: none
+    }
 
-	.grid-container {
-		grid-template-columns: 50% 50%;
-	}
+    .grid-container {
+        grid-template-columns: 50% 50%
+    }
 }
+
 @media screen and (min-width:600px) {
-
-	.grid-container {
-		grid-template-columns: 33% 33% 33%;
-	}
+    .grid-container {
+        grid-template-columns: 33% 33% 33%
+    }
 }
+
 @media screen and (min-width:800px) {
-
-	.grid-container {
-		grid-template-columns: 25% 25% 25% 25%;
-	}
+    .grid-container {
+        grid-template-columns: 25% 25% 25% 25%
+    }
 }
-@media screen and (min-width:1000px) {
 
-	.grid-container {
-		grid-template-columns: 20% 20% 20% 20% 20%;
-	}
+@media screen and (min-width:1000px) {
+    .grid-container {
+        grid-template-columns: 20% 20% 20% 20% 20%
+    }
 }
 
 body {
-	font-family: 'Titillium Web', sans-serif;
-	background-color: #1e1e1e;
-	margin: 0;
-	color: white;
+    font-family: 'Titillium Web',sans-serif;
+    background-color: #1e1e1e;
+    margin: 0;
+    color: #fff
 }
 
 a {
-	color: #ccccff
+    color: #ccf
 }
 
 a:hover {
-	filter: drop-shadow(0 0 0.5rem #ffffffbb);
+    filter: drop-shadow(0 0 .5rem #ffffffbb)
 }
 
 h3 {
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
+    text-transform: uppercase;
+    letter-spacing: .1em
 }
 
 #header {
-	position: fixed;
-	background-color: #ad7670;
-	min-height: 70px;
-	line-height: 70px;
-	width: 100%;
-	margin: 0 auto;
+    position: fixed;
+    z-index: 9999;
+    background-color: #ad7670c0;
+    min-height: 70px;
+    line-height: 70px;
+    width: 100%;
+    margin: 0 auto;
+    backdrop-filter: blur(5px)
 }
 
 #header a {
-	color: #ffffff;
-	text-decoration: none;
+    color: #fff;
+    text-decoration: none
 }
 
 #header a#filled-nav {
-	color: #ad7670;
-	font-weight: 600;
+    color: #ad7670;
+    font-weight: 600
 }
 
 #header-title {
-	display: block;
-	float: left;
-	height: 100%;
-	line-height: 100%;
-	margin: 18px 0px;
+    display: block;
+    float: left;
+    height: 100%;
+    line-height: 100%;
+    margin: 18px 0
 }
 
 #header-image {
-	display: inline-block;
-	height: 36px;
-	border-radius: 3px;
-	margin: auto 10px auto 0px;
-	vertical-align: middle;
+    display: inline-block;
+    height: 36px;
+    border-radius: 3px;
+    margin: auto 10px auto 0;
+    vertical-align: middle
+}
+
+#header-nav li,#header-title-text {
+    display: inline;
+    vertical-align: middle
 }
 
 #header-title-text {
-	display: inline;
-	font-size: 32px;
-	font-weight: 600;
-	vertical-align: middle;
-	font-family: 'Source Code Pro', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    font-family: 'Source Code Pro',sans-serif
+}
+
+#header-nav,.bg-img {
+    margin: 0;
+    display: block
 }
 
 #header-nav {
-	text-transform: uppercase;
-	font-size: 18px;
-	display: block;
-	float: right;
-	margin: 0;
-	padding-left: 0;
-	letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 18px;
+    float: right;
+    padding-left: 0;
+    letter-spacing: .1em
 }
 
 #header-nav li {
-	display: inline;
-	padding-left: 20px;
-	vertical-align: middle;
+    padding-left: 20px
 }
 
 #filled-nav {
-	padding: 5px 10px;
-	border-radius: 3px;
-	color: #ad7670;
-	background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #ad7670;
+    background-color: #fff
 }
 
 #content {
-	clear: both;
-	padding-top: 70px;
+    clear: both;
+    padding-top: 70px
 }
 
 #linkedin-button {
-	background-color: #4875B4;
+    background-color: #4875b4
 }
 
 #facebook-button {
-	background-color: #1877f2;
+    background-color: #1877f2
 }
 
 #instagram-button {
-	background-color: #C13584;
+    background-color: #c13584
 }
 
 #ball {
-	position: absolute;
-	visibility: hidden;
+    position: absolute;
+    visibility: hidden
 }
 
 #ball-image {
-	width: 180px;
-	height: 180px;
-	border-radius: 50%;
-	filter: drop-shadow(0 0 0.5rem #000000bb);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 .5rem #000000bb)
 }
 
 .bg-img {
-	margin: 0;
-	background-image: url('background.jpg');
-	filter: blur(10px) brightness(0.5);
-	height: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: fixed;
-	left: 0;
-	right: 0;
-	z-index: -9999;
-	display: block;
+    background-image: url(background.jpg);
+    filter: blur(5px) brightness(.5);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -9999
 }
 
 .container {
-	margin: auto;
-	max-width: 1200px;
-	box-sizing: border-box;
-	padding: 0px 10px;
+    margin: auto;
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding: 0 10px
 }
 
 .grid-container {
-	display: grid;
-	grid-column-gap: 5px;
-	grid-row-gap: 5px;
-	margin: 10px auto;
+    display: grid;
+    grid-column-gap: 7px;
+    grid-row-gap: 7px;
+    margin: 10px auto
 }
 
 .grid-item {
-	display: inline;
-	padding: 10px;
-	border-radius: 3px;
-	background-color: #3c3c3cd5;
+    display: inline;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #3c3c3cc0;
+    backdrop-filter: blur(5px)
 }
 
 .grid-item-header {
-	text-decoration: none;
-	margin: 0;
+    margin: 0
 }
 
-.grid-item-header a {
-	text-decoration: none;
+.grid-item-header,.grid-item-header a {
+    text-decoration: none
 }
 
 .grid-item img {
-	max-width: 100%;
-	margin-top: -10px;
-	border-radius: 3px;
+    max-width: 100%;
+    margin-top: -10px;
+    border-radius: 3px
 }
 
 .about {
-	display: block;
-	margin: 50px auto;
+    display: block;
+    margin: 50px auto
 }
 
 .about-image {
-	border-radius: 6px;
-	max-width: 180px;
-	margin-right: 30px;
+    border-radius: 6px;
+    max-width: 180px;
+    margin-right: 30px
+}
+
+.about-text,.about-title {
+    font-family: 'Source Code Pro',sans-serif
 }
 
 .about-title {
-	font-family: 'Source Code Pro', sans-serif;
-	font-weight: 600;
-	font-size: 84px;
-	margin-top: 40px;
-	margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 84px;
+    margin-top: 40px;
+    margin-bottom: 30px
 }
 
 .about-text {
-	font-family: 'Source Code Pro', sans-serif;
-	letter-spacing: 0.0em;
-	font-weight: 100;
-	font-size: 1.25em;
-	margin: 10px auto;
+    letter-spacing: 0;
+    font-weight: 100;
+    font-size: 1.25em;
+    margin: 10px auto
 }
 
 .contact {
-	display: block;
-	line-height: 3em;
-	margin-left: -40px;
-	margin-bottom: 30px;
+    display: block;
+    line-height: 3em;
+    margin-left: -40px;
+    margin-bottom: 30px
 }
 
 .contact li {
-	display: inline;
-	margin: 0px 10px 0px 0px;
+    display: inline;
+    margin: 0 10px 0 0
 }
 
 .contact-button {
-	padding: 5px 10px;
-	border-radius: 3px;
-	color: #ffffff;
-	background-color: #ad7670;
-	font-size: 18px;
-	text-decoration: none;
-	white-space: nowrap;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #ad7670;
+    font-size: 18px;
+    text-decoration: none;
+    white-space: nowrap
 }
 
 .contact-button-image {
-	max-width: 26px;
-	max-height: 26px;
-	vertical-align: middle;
-	margin: 0px 10px 5px 0px;
+    max-width: 26px;
+    max-height: 26px;
+    vertical-align: middle;
+    margin: 0 10px 5px 0
 }
 
 .contact-button-text {
-	text-transform: uppercase;
-	font-weight: 600;
-	letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .1em
 }
 
 .contact-button-subtext {
-	text-transform: none;
-	font-family: 'Source Code Pro', sans-serif;
-	letter-spacing: 0.0em;
+    text-transform: none;
+    font-family: 'Source Code Pro',sans-serif;
+    letter-spacing: 0
 }
 
 .repository {
-	margin-bottom: 30px;
+    margin-bottom: 30px
 }
 
-.carousel-cell, .carousel-cell-archived {
-	text-decoration: none;
-	margin: auto 12px auto 0px;
-	padding: 5px 10px 5px 10px;
-	width: 240px; /* full width */
-	height: 170px; /* height of carousel */
-	border-radius: 5px;
+.carousel-cell,.carousel-cell-archived {
+    text-decoration: none;
+    margin: auto 12px auto 0;
+    padding: 5px 10px;
+    width: 240px;
+    height: 170px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px)
 }
 
 .carousel-cell {
-	color: #ccccff;
-	background-color: #3c3c3cd5;
+    color: #ccf;
+    background-color: #3c3c3cc0
 }
 
 .carousel-cell-archived {
-	color: #676781;
-	background-color: #302f2fab;
+    color: #676781;
+    background-color: #302f2fc0
 }
 
-.carousel-cell-status, .carousel-cell-archived-status {
-	display: inline-block;
-	border-radius: 3px;
-	text-transform: uppercase;
-	margin: 5px 0px 5px 0px;
-	padding: 0px 5px;
-	letter-spacing: 0.05em;
-	color: black;
-	font-weight: 600;
+.carousel-cell-archived-status,.carousel-cell-status {
+    display: inline-block;
+    border-radius: 3px;
+    text-transform: uppercase;
+    margin: 5px 0;
+    padding: 0 5px;
+    letter-spacing: .05em;
+    color: #000;
+    font-weight: 600
 }
-
 
 .carousel-cell-status {
-	background-color: #ccccff;
+    background-color: #ccf
 }
 
 .carousel-cell-archived-status {
-	background-color: #676781;
+    background-color: #676781
 }
 
 .carousel-cell-header {
-	margin: 0px;
-	font-size: 28px;
-	white-space:nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+    margin: 0;
+    font-size: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
 }
 
 .carousel-cell-info {
-	word-wrap: break-word;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	max-height: 90px;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 90px
 }
 
 .post {
-	display: block;
-	padding: 10px;
-	border-radius: 3px;
-	background-color: #3c3c3cab;
-	margin: 15px auto;
+    display: block;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #3c3c3cc0;
+    margin: 15px auto;
+    backdrop-filter: blur(5px)
 }
 
 .post h2 {
-	margin: 0;
-	letter-spacing: 0.05em;
+    margin: 0;
+    letter-spacing: .05em
 }
 
-.post-author{
-	text-decoration: none;
+.post-author {
+    text-decoration: none
 }
 
 .post-author-image {
-	width: 24px;
-	height: 24px;
-	border-radius: 3px;
-	vertical-align: middle;
-	margin-right: 3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+    margin-right: 3px
 }
 
-.post-author-name {
-	vertical-align: middle;
+.post-author-image,.post-author-name {
+    vertical-align: middle
 }
 
 .post-title {
-	margin-top: 10px;
-	font-size: 20px;
+    margin-top: 10px;
+    font-size: 20px
 }
 
 .post-date {
-	display: inline-block;
-	border-radius: 3px;
-	text-transform: uppercase;
-	margin-top: 5px;
-	padding: 0px 5px;
-	letter-spacing: 0.05em;
-	background-color: white;
-	color: black;
-	font-weight: 600;
+    display: inline-block;
+    border-radius: 3px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    padding: 0 5px;
+    letter-spacing: .05em;
+    background-color: #fff;
+    color: #000;
+    font-weight: 600
 }
