@@ -30,19 +30,71 @@
     }
 }
 
+.theme-light {
+	--bg-image-url: url(background-light.jpg); 
+	--bg-image-filter: blur(5px) brightness(1.3);
+
+	--font-color: #000000;
+	--link-color: #000066;
+	--hover-color: #000000bb;
+	--accent-color: #dcebef;
+	--accent-color-trans: #dcebef80;
+	--main-color-trans: #f2f2f280;
+
+	--carousel-cell-status-text-color: #ffffff;
+	--carousel-cell-status-color: #000066;
+	--carousel-cell-archived-status-color: #676781;
+	--carousel-cell-archived-color: #676781;
+    --carousel-cell-archived-background-color: #cdcbcb80;
+    
+	--post-date-color: #ffffff;
+
+	--contact-button-text-color: #ffffff;
+	--linkedin-button-color: #4875b4;
+	--facebook-button-color: #1877f2;
+	--instagram-button-color: #c13584;
+	--email-button-color: #607c9f;
+} 
+
+.theme-dark {
+	--bg-image-url: url(background-dark.jpg); 
+	--bg-image-filter: blur(5px) brightness(.3);
+
+	--font-color: #ffffff;
+	--link-color: #ccccff;
+	--hover-color: #ffffffbb;
+	--accent-color: #303f50;
+	--accent-color-trans: #303f50c0;
+	--main-color-trans: #3c3c3c80;
+
+	--carousel-cell-status-text-color: #000000;
+	--carousel-cell-status-color: #ccccff;
+	--carousel-cell-archived-status-color: #676781;
+	--carousel-cell-archived-color: #676781;
+    --carousel-cell-archived-background-color: #302f2f80;
+    
+	--post-date-color: #000000;
+
+	--contact-button-text-color: #ffffff;
+	--linkedin-button-color: #4875b4;
+	--facebook-button-color: #1877f2;
+	--instagram-button-color: #c13584;
+	--email-button-color: #607c9f;
+}  
+
 body {
     font-family: 'Titillium Web',sans-serif;
-    background-color: #1e1e1e;
+    background-color: #000000;
     margin: 0;
-    color: #fff;
+    color: var(--font-color);
 }
 
 a {
-    color: #ccf;
+    color: var(--link-color);
 }
 
 a:hover {
-    filter: drop-shadow(0 0 .5rem #ffffffbb);
+    filter: drop-shadow(0 0 .5rem var(--hover-color));
 }
 
 h3 {
@@ -53,7 +105,7 @@ h3 {
 #header {
     position: fixed;
     z-index: 9999;
-    background-color: #303f50c0;
+    background-color: var(--accent-color-trans);
     min-height: 70px;
     line-height: 70px;
     width: 100%;
@@ -62,12 +114,12 @@ h3 {
 }
 
 #header a {
-    color: #fff;
+    color: var(--font-color);
     text-decoration: none;
 }
 
 #header a#filled-nav {
-    color: #303f50;
+    color: var(--accent-color);
     font-weight: 600;
 }
 
@@ -118,8 +170,7 @@ h3 {
 #filled-nav {
     padding: 5px 10px;
     border-radius: 3px;
-    color: #303f50;
-    background-color: #fff;
+    background-color: var(--font-color);
 }
 
 #content {
@@ -128,19 +179,19 @@ h3 {
 }
 
 #linkedin-button {
-    background-color: #4875b4;
+    background-color: var(--linkedin-button-color);
 }
 
 #facebook-button {
-    background-color: #1877f2;
+    background-color: var(--facebook-button-color);
 }
 
-#instagram-button {
-    background-color: #c13584;
+#instagram-button { 
+    background-color: var(--instagram-button-color);
 }
 
 #email-button {
-    background-color: #607c9f;
+    background-color: var(--email-button-color);
 }
 
 #ball {
@@ -152,12 +203,16 @@ h3 {
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    filter: drop-shadow(0 0 .5rem #000000bb);
+    filter: drop-shadow(0 0 .5rem var(--hover-color));
+}
+
+#toggle-theme-button {
+    font-size: 22px;
 }
 
 .bg-img {
-    background-image: url(background.jpg);
-    filter: blur(5px) brightness(.33);
+    background-image: var(--bg-image-url);
+    filter: var(--bg-image-filter);
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -177,8 +232,8 @@ h3 {
 
 .grid-container {
     display: grid;
-    grid-column-gap: 7px;
-    grid-row-gap: 7px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
     margin: 10px auto;
 }
 
@@ -186,7 +241,7 @@ h3 {
     display: inline;
     padding: 10px;
     border-radius: 3px;
-    background-color: #3c3c3cc0;
+    background-color: var(--main-color-trans);
     backdrop-filter: blur(5px);
 }
 
@@ -248,8 +303,7 @@ h3 {
 .contact-button {
     padding: 5px 10px;
     border-radius: 3px;
-    color: #fff;
-    background-color: #303f50;
+    color: var(--contact-button-text-color);
     font-size: 18px;
     text-decoration: none;
     white-space: nowrap;
@@ -289,13 +343,13 @@ h3 {
 }
 
 .carousel-cell {
-    color: #ccf;
-	background-color: #3c3c3cc0;
+    color: var(--link-color);
+	background-color: var(--main-color-trans);
 }
 
 .carousel-cell-archived {
-    color: #676781;
-    background-color: #302f2fc0;
+    color: var(--carousel-cell-archived-color);
+    background-color: var(--carousel-cell-archived-background-color);
 }
 
 .carousel-cell-archived-status,.carousel-cell-status {
@@ -305,16 +359,16 @@ h3 {
     margin: 5px 0;
     padding: 0 5px;
     letter-spacing: .05em;
-    color: #000;
+    color: var(--carousel-cell-status-text-color);
     font-weight: 600;
 }
 
 .carousel-cell-status {
-    background-color: #ccf;
+    background-color: var(--carousel-cell-status-color);
 }
 
 .carousel-cell-archived-status {
-    background-color: #676781;
+    background-color: var(--carousel-cell-archived-status-color);
 }
 
 .carousel-cell-header {
@@ -336,7 +390,7 @@ h3 {
     display: block;
     padding: 10px;
     border-radius: 3px;
-    background-color: #3c3c3cc0;
+    background-color: var(--main-color-trans);
     margin: 15px auto;
     backdrop-filter: blur(5px);
 }
@@ -373,7 +427,7 @@ h3 {
     margin-top: 5px;
     padding: 0 5px;
     letter-spacing: .05em;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--font-color);
+    color: var(--post-date-color);
     font-weight: 600;
 }

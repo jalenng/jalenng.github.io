@@ -1,139 +1,137 @@
 <!DOCTYPE html>
+<html lang="en" class="theme-light">
+    <head>
+        <title>Archives | jalenng</title>
+        <meta content="width=device-width, initial-scale=0.8" name="viewport" />
+        <link href="styles.css" rel="stylesheet" type="text/css" />
+        <link href="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4" rel="icon" />
+    </head>
 
-<html>
-<head>
-<title>Archives | jalenng</title>
-<meta content="width=device-width, initial-scale=0.8" name="viewport">
-<link href="styles.css" rel="stylesheet" type="text/css">
-<link href="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4" rel="icon">
-</head>
+    <body>
+        <div class="bg-img"></div>
 
-<body>
-<div class="bg-img">
-</div>
+        <div id="header">
+            <div class="container">
+                <div id="header-title">
+                    <a href="index.html">
+                        <img id="header-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4" />
 
+                        <div id="header-title-text">
+                            <span>jalenng</span>
+                        </div>
+                    </a>
+                </div>
 
-<div id="header">
-    <div class="container">
-        <div id="header-title">
-            <a href="index.html"><img id="header-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
-
-            <div id="header-title-text">
-                <span>jalenng</span>
-            </div></a>
-        </div>
-
-
-        <nav>
-            <ul id="header-nav">
-                <li>
-                    <a href="blog.html">Blog</a>
-                </li>
-
-
-                <li>
-                    <a href="archive.html">Archive</a>
-                </li>
-
-
-                <li>
-                    <a href="https://github.com/jalenng" id="filled-nav">GitHub Profile</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</div>
-
-
-<div id="content">
-    <div class="container">
-        <h3>AP Computer Science Assignments</h3>
-
-
-        <p>Below are all my projects from my high school AP Computer Science class that have visuals or interactive elements. They are intended to be viewed on a computer.</p>
-
-
-        <div class="grid-container">
-            <div class="grid-item">
-                <a href="https://jalenng.github.io/AsteroidsGame/">
-                <h4 class="grid-item-header">AsteroidsGame</h4>
-                <br>
-                <img src="archives/apcs/asteroids-game.png"></a>
-            </div>
-
-
-            <div class="grid-item">
-                <a href="https://jalenng.github.io/Minesweeper/">
-                <h4 class="grid-item-header">Minesweeper</h4>
-                <br>
-                <img src="archives/apcs/minesweeper.png"></a>
-            </div>
-
-
-            <div class="grid-item">
-                <a href="https://jalenng.github.io/FractalTree/">
-                <h4 class="grid-item-header">FractalTree</h4>
-                <br>
-                <img src="archives/apcs/fractal-tree.png"></a>
-            </div>
-
-
-            <div class="grid-item">
-                <a href="https://jalenng.github.io/OriginalFractal/">
-                <h4 class="grid-item-header">OriginalFractal</h4>
-                <br>
-                <img src="archives/apcs/original-fractal.png"></a>
-            </div>
-
-
-            <div class="grid-item">
-                <a href="https://jalenng.github.io/SierpinskiTriangle/">
-                <h4 class="grid-item-header">SierpinskiTriangle</h4>
-                <br>
-                <img src="archives/apcs/sierpinski-triangle.png"></a>
-            </div>
-
-
-            <div class="grid-item">
-                <a href="https://jalenng.github.io/Starfield/">
-                <h4 class="grid-item-header">Starfield</h4>
-                <br>
-                <img src="archives/apcs/starfield.png"></a>
-            </div>
-
-
-            <div class="grid-item">
-                <a href="https://jalenng.github.io/Chemotaxis/">
-                <h4 class="grid-item-header">Chemotaxis</h4>
-                <br>
-                <img src="archives/apcs/chemotaxis.png"></a>
-            </div>
-
-
-            <div class="grid-item">
-                <a href="https://jalenng.github.io/Dice/">
-                <h4 class="grid-item-header">Dice</h4>
-                <br>
-                <img src="archives/apcs/dice.png"></a>
-            </div>
-
-
-            <div class="grid-item">
-                <a href="https://jalenng.github.io/Lightning/">
-                <h4 class="grid-item-header">Lightning</h4>
-                <br>
-                <img src="archives/apcs/lightning.png"></a>
-            </div>
-
-
-            <div class="grid-item">
-                <a href="https://jalenng.github.io/OriginalDesign/">
-                <h4 class="grid-item-header">OriginalDesign</h4>
-                <br>
-                <img src="archives/apcs/original-design.png"></a>
+                <nav>
+                    <ul id="header-nav">
+                        <li>
+                            <a id="toggle-theme-button" onclick="toggleTheme()">☀</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">Blog</a>
+                        </li>
+                        <li>
+                            <a href="archive.html">Archive</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/jalenng" id="filled-nav">GitHub Profile</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
-    </div>
-</div>
-</body>
+
+        <div id="content">
+            <div class="container">
+                <h3>AP Computer Science Assignments</h3>
+
+                <p>Below are all my projects from my high school AP Computer Science class that have visuals or interactive elements. They are intended to be viewed on a computer.</p>
+
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <a href="https://jalenng.github.io/AsteroidsGame/">
+                            <h4 class="grid-item-header">AsteroidsGame</h4>
+                            <br />
+                            <img src="archives/apcs/asteroids-game.png" />
+                        </a>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://jalenng.github.io/Minesweeper/">
+                            <h4 class="grid-item-header">Minesweeper</h4>
+                            <br />
+                            <img src="archives/apcs/minesweeper.png" />
+                        </a>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://jalenng.github.io/FractalTree/">
+                            <h4 class="grid-item-header">FractalTree</h4>
+                            <br />
+                            <img src="archives/apcs/fractal-tree.png" />
+                        </a>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://jalenng.github.io/OriginalFractal/">
+                            <h4 class="grid-item-header">OriginalFractal</h4>
+                            <br />
+                            <img src="archives/apcs/original-fractal.png" />
+                        </a>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://jalenng.github.io/SierpinskiTriangle/">
+                            <h4 class="grid-item-header">SierpinskiTriangle</h4>
+                            <br />
+                            <img src="archives/apcs/sierpinski-triangle.png" />
+                        </a>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://jalenng.github.io/Starfield/">
+                            <h4 class="grid-item-header">Starfield</h4>
+                            <br />
+                            <img src="archives/apcs/starfield.png" />
+                        </a>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://jalenng.github.io/Chemotaxis/">
+                            <h4 class="grid-item-header">Chemotaxis</h4>
+                            <br />
+                            <img src="archives/apcs/chemotaxis.png" />
+                        </a>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://jalenng.github.io/Dice/">
+                            <h4 class="grid-item-header">Dice</h4>
+                            <br />
+                            <img src="archives/apcs/dice.png" />
+                        </a>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://jalenng.github.io/Lightning/">
+                            <h4 class="grid-item-header">Lightning</h4>
+                            <br />
+                            <img src="archives/apcs/lightning.png" />
+                        </a>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://jalenng.github.io/OriginalDesign/">
+                            <h4 class="grid-item-header">OriginalDesign</h4>
+                            <br />
+                            <img src="archives/apcs/original-design.png" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="themeswitcher.js"></script>
+    </body>
 </html>

@@ -1,22 +1,28 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
     <head>
         <title>Blog | jalenng</title>
-        <meta content="width=device-width, initial-scale=0.8" name="viewport">
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <link rel="icon" href="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
+        <meta content="width=device-width, initial-scale=0.8" name="viewport" />
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="icon" href="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4" />
     </head>
     <body>
         <div class="bg-img"></div>
         <div id="header">
             <div class="container">
                 <div id="header-title">
-                    <a href="index.html"><img id="header-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
-                    <div id="header-title-text">
-                        <span>jalenng</span>
-                    </div></a>
+                    <a href="index.html">
+                        <img id="header-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4" />
+                        <div id="header-title-text">
+                            <span>jalenng</span>
+                        </div>
+                    </a>
                 </div>
                 <nav>
                     <ul id="header-nav">
+                        <li>
+                            <a id="toggle-theme-button" onclick="toggleTheme()">☀</a>
+                        </li>
                         <li>
                             <a href="blog.html">Blog</a>
                         </li>
@@ -34,7 +40,7 @@
             <div class="container">
                 <div class="post">
                     <a class="post-author" href="index.html">
-                        <img class="post-author-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
+                        <img class="post-author-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4" />
                         <span class="post-author-name">Me</span>
                     </a>
                     <div class="post-title">
@@ -48,14 +54,17 @@
                             Hello World!
                         </p>
                         <p>
-                            I have no idea if anyone will ever see this, nor if I will even keep this up, but cheers to the first post! 
+                            I have no idea if anyone will ever see this, nor if I will even keep this up, but cheers to the first post!
                         </p>
                         <p>
-                            May this be the start of something new! 
+                            May this be the start of something new!
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </body>
+
+    <!-- Scripts -->
+    <script src="themeswitcher.js"></script>
 </html>
