@@ -31,6 +31,7 @@
 }
 
 .theme-light {
+    --bg-color: #ffffff;
 	--bg-image-url: url(background-light.jpg); 
 	--bg-image-filter: blur(5px) brightness(1.3);
 
@@ -57,6 +58,7 @@
 } 
 
 .theme-dark {
+    --bg-color: #000000;
 	--bg-image-url: url(background-dark.jpg); 
 	--bg-image-filter: blur(5px) brightness(.3);
 
@@ -84,7 +86,7 @@
 
 body {
     font-family: 'Titillium Web',sans-serif;
-    background-color: #000000;
+    background-color: var(--bg-color);
     margin: 0;
     color: var(--font-color);
 }
