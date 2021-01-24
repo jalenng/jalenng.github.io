@@ -2,7 +2,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:660px) {
     #header-title-text span {
         display: none;
     }
@@ -30,6 +30,12 @@
     }
 }
 
+@media screen and (min-width:1200px) {
+    .grid-container {
+        grid-template-columns: 16% 16% 16% 16% 16% 16%;
+    }
+}
+
 .theme-light {
     --bg-color: #ffffff;
 	--bg-image-url: url(background-light.jpg); 
@@ -39,14 +45,11 @@
 	--link-color: #000066;
 	--hover-color: #000000bb;
 	--accent-color: #dcebef;
-	--accent-color-trans: #dcebef80;
-	--main-color-trans: #f2f2f280;
+	--accent-color-trans: #dcebefcc;
+	--main-color-trans: #f2f2f2cc;
 
 	--carousel-cell-status-text-color: #ffffff;
 	--carousel-cell-status-color: #000066;
-	--carousel-cell-archived-status-color: #676781;
-	--carousel-cell-archived-color: #676781;
-    --carousel-cell-archived-background-color: #cdcbcb80;
     
 	--post-date-color: #ffffff;
 
@@ -66,14 +69,11 @@
 	--link-color: #ccccff;
 	--hover-color: #ffffffbb;
 	--accent-color: #303f50;
-	--accent-color-trans: #303f50c0;
-	--main-color-trans: #3c3c3c80;
+	--accent-color-trans: #303f50cc;
+	--main-color-trans: #3c3c3ccc;
 
 	--carousel-cell-status-text-color: #000000;
 	--carousel-cell-status-color: #ccccff;
-	--carousel-cell-archived-status-color: #676781;
-	--carousel-cell-archived-color: #676781;
-    --carousel-cell-archived-background-color: #302f2f80;
     
 	--post-date-color: #000000;
 
@@ -202,8 +202,8 @@ h3 {
 }
 
 #ball-image {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     filter: drop-shadow(0 0 .5rem var(--hover-color));
 }
@@ -227,7 +227,7 @@ h3 {
 
 .container {
     margin: auto;
-    max-width: 1200px;
+    max-width: 1400px;
     box-sizing: border-box;
     padding: 0 10px;
 }
@@ -262,13 +262,25 @@ h3 {
 }
 
 .about {
-    display: block;
     margin: 50px auto;
+    display: inline;
+    vertical-align: middle;
+}
+
+.about-left {
+    margin: auto;
+    float: left;
+    vertical-align: middle;
+}
+
+.about-right {
+    display: inline-block;
 }
 
 .about-image {
     border-radius: 6px;
-    max-width: 180px;
+    max-width: 160px;
+    margin-top: 40px;
     margin-right: 30px;
 }
 
@@ -280,14 +292,14 @@ h3 {
     font-weight: 600;
     font-size: 84px;
     margin-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .about-text {
     letter-spacing: 0;
     font-weight: 100;
     font-size: 1.25em;
-    margin: 10px auto;
+    margin-bottom: 40px;
 }
 
 .contact {
@@ -334,27 +346,31 @@ h3 {
     margin-bottom: 30px;
 }
 
-.carousel-cell,.carousel-cell-archived {
+.carousel-cell, .carousel-cell-archived {
     text-decoration: none;
     margin: auto 12px auto 0;
-    padding: 5px 10px;
-    width: 240px;
-    height: 170px;
+    padding: 10px 10px;
+    width: 250px;
+    height: 400px;
     border-radius: 5px;
     backdrop-filter: blur(5px);
-}
-
-.carousel-cell {
     color: var(--link-color);
 	background-color: var(--main-color-trans);
 }
 
 .carousel-cell-archived {
-    color: var(--carousel-cell-archived-color);
-    background-color: var(--carousel-cell-archived-background-color);
+    filter: brightness(67%);
 }
 
-.carousel-cell-archived-status,.carousel-cell-status {
+.carousel-cell-image {
+    width: 250px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.carousel-cell-status {
     display: inline-block;
     border-radius: 3px;
     text-transform: uppercase;
@@ -363,14 +379,7 @@ h3 {
     letter-spacing: .05em;
     color: var(--carousel-cell-status-text-color);
     font-weight: 600;
-}
-
-.carousel-cell-status {
     background-color: var(--carousel-cell-status-color);
-}
-
-.carousel-cell-archived-status {
-    background-color: var(--carousel-cell-archived-status-color);
 }
 
 .carousel-cell-header {
