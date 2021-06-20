@@ -1,96 +1,117 @@
 <html lang="en" class="theme-dark">
-    <head>
-        <title>jalenng</title>
-        <meta content="width=device-width, initial-scale=0.8" name="viewport">
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <link rel="stylesheet" href="flickity.min.css">
-        <link rel="icon" href="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
-    </head>
-    <body>
-        <div class="bg-img"></div>
-        <div id="header">
-            <div class="container">
-                <nav>
-                    <ul id="header-nav">
-                        <li>
-                            <a id="toggle-theme-button" onclick="toggleTheme()">☀</a>
-                        </li>   
-                        <li>
-                            <a href="blog.html">Blog</a>
-                        </li>
-                        <li>
-                            <a href="archive.html">Archive</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/jalenng" id="filled-nav">GitHub Profile</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div id="content">
-            <div class="container">
-                <div class="about">
-                    <div class="about-left">
-                        <div id="ball">
-                            <a href="https://en.wikipedia.org/wiki/Bouncing_ball">
-                                <img id="ball-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
-                            </a> 
-                        </div>
 
-                        <a onclick="triggerBall()">
-                            <img class="about-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
+<head>
+    <title>jalenng</title>
+    <meta content="width=device-width, initial-scale=0.8" name="viewport">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" href="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
+</head>
+
+<body>
+    <div class="bg-img"></div>
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="header-nav">
+                    <li>
+                        <a 
+                            id="toggle-theme-button" onclick="toggleTheme()" 
+                            aria-label="Toggle theme" title="Toggle theme" 
+                        >☀</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="archive.html">Archive</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/jalenng" id="filled-nav">GitHub Profile</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div id="content">
+
+        <div class="container">
+
+            <div class="about">
+
+                <div class="about-left">
+    
+                    <div id="ball">
+                        <a href="https://en.wikipedia.org/wiki/Bouncing_ball">
+                            <img id="ball-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
                         </a>
                     </div>
-
-                    <div class="about-right">
-                        <h1 class="about-title">
-                            jalenng
-                        </h1>
-                        <div class="about-text">
-                            Pursuing a B.S. in Computer Science @ <a href="https://www.sjsu.edu/""> San José State University</a>. </em>
-                        </div>
+    
+                    <a onclick="triggerBall()">
+                        <img class="about-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
+                    </a>
+    
+                    <h1 class="about-title">
+                        jalenng
+                    </h1>
+                    <div class="about-text" id="splash">
+                        <!-- Will be updated by splash.js -->
                     </div>
-                    
+    
+                    <ul class="contact" >
+                        <li>
+                            <a 
+                                class="contact-button" id="linkedin-button"
+                                aria-label="LinkedIn" title="LinkedIn" 
+                                href="https://www.linkedin.com/in/jalen-ng/" target="_blank"
+                            >
+                                    <img class=contact-button-image src="img/contact/linkedin.png">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a 
+                                class="contact-button" id="email-button"
+                                href="mailto:jalen.ng@sjsu.edu" target="_blank"
+                                aria-label="Email" title="Email" 
+                            >
+                                <img class=contact-button-image src="img/contact/email.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                class="contact-button" id="itchio-button"
+                                href="https://jayn.itch.io/" target="_blank"
+                                aria-label="itch.io" title="itch.io"
+                            >
+                                <img class=contact-button-image src="img/contact/itchio.png">
+                            </a>
+                        </li>
+                    </ul>
+    
                 </div>
-            </div>
+    
+                <div class="about-right">
+    
+                    <div class="repositories">
+                        <!-- Will be populated by repositories.js -->
+                    </div>
 
-            <div class="container">
-                <h3>Contacts</h3>
-                <ul class="contact" style="list-style: none;">
-                    <li><a class="contact-button" id="linkedin-button" href="https://www.linkedin.com/in/jalen-ng/">
-                        <img class=contact-button-image src="contact/linkedin.png">
-                        <span class="contact-button-text">LinkedIn</span>
-                    </a></li>
-                    <li><a class="contact-button" id="facebook-button" href="https://www.facebook.com/jalen.ng.73">
-                        <img class=contact-button-image src="contact/facebook.png">
-                        <span class="contact-button-text">Facebook</span>
-                    </a></li>
-                    <li><a class="contact-button" id="instagram-button" href="https://www.instagram.com/jalenng_/">
-                        <img class=contact-button-image src="contact/instagram.png">
-                        <span class="contact-button-text">Instagram</span>
-                    </a></li>
-                    <li><a class="contact-button" id="email-button" href="mailto:jalen.ng@sjsu.edu">
-                        <img class=contact-button-image src="contact/email.png">
-                        <span class="contact-button-text">Email: </span>
-                        <span class="contact-button-subtext">jalen.ng@sjsu.edu</span>
-                    </a></li>
-                </ul>
-            </div>
-
-            <div class="container">
-                <div class="repositories">
-                    <h3>Active Repositories</h3>
                 </div>
+    
             </div>
-        </div>
-        
-        <!-- Scripts -->
-        <script src="ball.js" language="JavaScript"></script>
-        <script src="flickity.pkgd.min.js"></script>
-        <script src="themeswitcher.js"></script>
-    </body>
 
-    <script src="script.js"></script>
+        </div>      
+
+    </div>
+
+</body>
+
+<!-- Scripts -->
+<script src="scripts/themeswitcher.js"></script>
+<script src="scripts/repositories.js"></script>
+<script src="scripts/splash.js"></script>
+<script src="scripts/ball.js" language="JavaScript"></script>
 
 </html>

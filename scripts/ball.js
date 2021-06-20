@@ -1,4 +1,4 @@
-var NUM_CLICKS_FOR_ACTIVATION = 3;
+var NUM_CLICKS_FOR_ACTIVATION = 2;
 var numClicks = 0;
 var isRunning = false;
 var delay = 3;
