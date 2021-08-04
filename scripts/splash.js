@@ -1,7 +1,6 @@
 const SPLASHES = [
     'Computer Science @ SJSU.',
     'Game and Web Developer.',
-    '🧡s Electron.js.',
     'Loves learning new technologies.',
     'Check out my contacts below.'
 ]
@@ -28,8 +27,6 @@ function clearInnerText() {
 
             update()
 
-            console.log('clearing')
-
         }, CHARACTER_DELAY)
 
     })
@@ -51,9 +48,7 @@ function writeInnerText() {
             }
 
             update()
-
-            console.log('writing')
-
+            
         }, CHARACTER_DELAY)
 
     })

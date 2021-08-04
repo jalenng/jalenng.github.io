@@ -3,7 +3,7 @@
  */ 
 function getResponseFromGetRequest(url) {
     const request = new XMLHttpRequest()
-    request.open("GET", url, false)
+    request.open('GET', url, false)
     request.send()
 
     return request.response
@@ -29,86 +29,96 @@ function getReadme(user, repo) {
 }
 
 /**
- * Populates the mainElem div with information about the repo
+ * Populates the mainElem div with information about the repo.
  */
-async function createRepoElem(mainElem, repo) {
+function createRepoElemPromise(repo) {
 
-    // Destructure repo object
-    const name = repo.name
-    const description = repo.description
-    const numStargazers = repo.stargazers_count
-    const language = repo.language
+    return new Promise((resolve, reject) => {
 
-    // Get repo readme content
-    const readme = getReadme(GITHUB_USERNAME, name)
+        // Destructure repo object
+        const name = repo.name
+        const description = repo.description
+        const numStargazers = repo.stargazers_count
+        const language = repo.language
 
-    // Get imagetags from content
-    const imageTags = readme.match(MD_IMAGE_REGEX)
+        // Get repo readme content
+        const readme = getReadme(GITHUB_USERNAME, name)
 
-    // Get image URL from first imagetag
-    let imageURL = 'img/repos/code.png' // Fallback image
+        // Get imagetags from content
+        const imageTags = readme.match(MD_IMAGE_REGEX)
 
-    if (imageTags) {
+        // Get image URL from first imagetag
+        let imageURL = 'img/repos/code.png' // Fallback image
 
-        // Get first imagetag
-        let firstTag = imageTags[0]
+        if (imageTags) {
 
-        // Get the beginning part of the tag "![...]("
-        const imageTagBeginning = firstTag.match(MD_IMAGE_REGEX_BEGIN)
+            // Get first imagetag
+            let firstTag = imageTags[0]
 
-        // Remove the beginning part from imagetag
-        firstTag = firstTag.replace(imageTagBeginning, '')
+            // Get the beginning part of the tag '![...]('
+            const imageTagBeginning = firstTag.match(MD_IMAGE_REGEX_BEGIN)
 
-        // Remove the closing paranthesis at the end
-        firstTag = firstTag.substring(0, firstTag.length - 1)
+            // Remove the beginning part from imagetag
+            firstTag = firstTag.replace(imageTagBeginning, '')
 
-        // Check for https://
-        if (firstTag.match(/https:\/\//g)) {
-            imageURL = firstTag
+            // Remove the closing paranthesis at the end
+            firstTag = firstTag.substring(0, firstTag.length - 1)
+
+            // Check for https://
+            if (firstTag.match(/https:\/\//g)) {
+                imageURL = firstTag
+            }
         }
-    }
 
-    /** Create the child elements */
+        /** Create the child elements */
 
-    // Parent
-    mainElem.href = repo['svn_url']
+        // Main
+        const mainElem = document.createElement('a')
+        mainElem.className = 'repo'
+        mainElem.href = repo['svn_url']
 
-    // Left
-    const leftElem = document.createElement('div')
-    leftElem.className = 'repo-left'
+        // Left
+        const leftElem = document.createElement('div')
+        leftElem.className = 'repo-left'
 
-    // Right
-    const rightElem = document.createElement('div')
-    rightElem.className = 'repo-right'
+        // Right
+        const rightElem = document.createElement('div')
+        rightElem.className = 'repo-right'
 
-    // Image
-    const imageElem = document.createElement('img')
-    imageElem.src = imageURL
-    imageElem.className = 'repo-image'
+        // Image
+        const imageElem = document.createElement('img')
+        imageElem.src = imageURL
+        imageElem.className = 'repo-image'
+        imageElem.alt = `${name} image`
 
-    // Name/header
-    const nameElem = document.createElement('h1')
-    nameElem.innerText = name
+        // Name/header
+        const nameElem = document.createElement('h1')
+        nameElem.innerText = name
 
-    // Description
-    const descriptionElem = document.createElement('p')
-    descriptionElem.className = 'repo-description'
-    descriptionElem.innerText = description
+        // Description
+        const descriptionElem = document.createElement('p')
+        descriptionElem.className = 'repo-description'
+        descriptionElem.innerText = description
 
-    // Stats badge
-    const statsElem = document.createElement('div')
-    statsElem.className = 'repo-stats'
-    statsElem.innerText = `${language} • ⭐${numStargazers}`
+        // Stats badge
+        const statsElem = document.createElement('div')
+        statsElem.className = 'repo-stats'
+        statsElem.innerText = `${language} • ⭐${numStargazers}`
 
-    // Put it all together    
-    mainElem.appendChild(leftElem)      
-    mainElem.appendChild(rightElem)
+        // Put it all together    
+        mainElem.appendChild(leftElem)      
+        mainElem.appendChild(rightElem)
 
-    leftElem.appendChild(imageElem)
-    
-    rightElem.appendChild(nameElem)
-    rightElem.appendChild(descriptionElem)
-    rightElem.appendChild(statsElem)
+        leftElem.appendChild(imageElem)
+        
+        rightElem.appendChild(nameElem)
+        rightElem.appendChild(statsElem)
+        rightElem.appendChild(descriptionElem)
+
+        resolve(mainElem);
+
+    })
+
 }
 
 /** Start of execution */
@@ -122,18 +132,14 @@ const MD_IMAGE_REGEX_BEGIN = /!\[[^\]]+\]\(/g
 let repos = getRepos(GITHUB_USERNAME)
 repos = repos.filter(repo => !repo['archived'])
 
-// Select mainElem to populate
+// Select repo div to populate
 const reposDiv = document.querySelector('.repositories')
 
-// Populate the repos
+// Create the elements based on the repo information, and push them to the DOM
 for (const repo of repos) {
-
-    // Create main element
-    const mainElem = document.createElement('a')
-    mainElem.className = "repo"
-    reposDiv.appendChild(mainElem)
-
-    // Populate the main element
-    createRepoElem(mainElem, repo)
-
+    createRepoElemPromise(repo).then((repoElem) => {
+        reposDiv.appendChild(repoElem)
+    })
 }
+
+

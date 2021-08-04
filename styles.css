@@ -18,6 +18,13 @@
     }
 }
 
+@media screen and (min-width:768px) {
+    .about-left {
+        position: sticky;
+        top: 122px;
+    }
+}
+
 @media screen and (min-width:800px) {
     .grid-container {
         grid-template-columns: 25% 25% 25% 25%;
@@ -219,7 +226,7 @@ h3 {
     margin: auto;
     max-width: 1200px;
     box-sizing: border-box;
-    padding: 0 10px;
+    padding: 0 24px;
 }
 
 .grid-container {
@@ -257,6 +264,7 @@ h3 {
     margin: 50px auto;
     vertical-align: middle;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 .about-left {
@@ -267,7 +275,7 @@ h3 {
 .about-right {
     flex: 1 0 50%;
     max-width: 700px;
-    min-width: 600px;
+    min-width: 360px;
 }
 
 .about-image {
@@ -311,6 +319,7 @@ h3 {
     display: inline-block;
     border-radius: 3px;
     text-decoration: none;
+    font-size: 0;
 }
 
 .contact-button-image {
@@ -335,8 +344,8 @@ h3 {
     overflow: hidden;
 }
 .repo-left {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     background-color: var(--accent-color-trans);
 }
 
@@ -368,7 +377,6 @@ h3 {
 }
 
 .repo-stats {
-    position: absolute;
     bottom: 10px;
     border-radius: 3px;
     text-transform: uppercase;
