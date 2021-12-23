@@ -1,44 +1,51 @@
-var NUM_CLICKS_FOR_ACTIVATION = 2;
+const NUM_CLICKS_FOR_ACTIVATION = 2;
+
 var numClicks = 0;
 var isRunning = false;
-var delay = 3;
-var height = 0;
+var fps = 60;
+var interval;
+
 var Hoffset = 0;
 var Woffset = 0;
-var vx = 3;
-var vy = 0;
-var a = 9.81 / 60;
-var rotation = 0;
-var angularVel = 0;
-var pause = true;
-var interval;
+
 var xPos = ball.offsetLeft;
 var yPos = ball.offsetTop;
 
-function changePos() {
+var vx = 3;
+var vy = 0;
+
+var a = 9.81;
+
+var rotation = 0;
+var angularVel = 0;
+
+// Get the ball
+ball = document.getElementById('ball')
+
+// Updates the ball's position
+function updateBall() {
     width = document.body.clientWidth;
     height = document.body.clientHeight;
     Hoffset = ball.offsetHeight;
     Woffset = ball.offsetWidth;
-    ball.style.left = xPos + document.body.scrollLeft;
-    ball.style.top = yPos + document.body.scrollTop;
-    ball.style.transform = "rotate(" + rotation + "deg)";
 
+    // Update the ball style properties
+    ball.style.left = `${xPos + document.body.scrollLeft}px`;
+    ball.style.top = `${yPos + document.body.scrollTop}px`;
+    ball.style.transform = `rotate(${rotation}deg)`;
+
+    // Physics integration
     xPos = xPos + vx;
     yPos = yPos + vy;
-    vy += a;
+    vy += a / fps;
     angularVel = vx;
     rotation += angularVel;
 
-    //top
     if (yPos <= -Hoffset) {
-        clearInterval(interval);
-        numClicks = 0;
-        isRunning = false;
-        document.body.style.overflow = "scroll"
-    }
+        stopBall();
+    }    
 
-    //bottom
+    // Vertical velocity
     if (yPos >= (height - Hoffset)) {
         yPos = height - Hoffset;
         if ((-vy * 0.95) < 0.25) {
@@ -49,6 +56,7 @@ function changePos() {
         }
     }
 
+    // Horizontal velocity
     if (xPos < 0) {
         xPos = 0;
         if ((-vx * 0.95) > 0.5) {
@@ -68,12 +76,28 @@ function changePos() {
         }
     }
 }
-function triggerBall() {
+
+// Counts the number of clicks and starts the ball if it's been clicked enough times
+function registerBallClick() {
     numClicks++;
     if (numClicks == NUM_CLICKS_FOR_ACTIVATION && !isRunning) {
-        document.getElementById('ball').style.visibility = "visible";
-        interval = setInterval('changePos()', delay);
-        isRunning = true;
-        document.body.style.overflow = "hidden";
+        runBall();
     }
+}
+
+// Begins animating the ball
+function runBall() {
+    interval = setInterval(updateBall, 1 / fps);
+    document.body.style.overflow = "hidden"; // Prevents scrollbar from appearing when the ball is near the edge
+    ball.style.visibility = "visible";  // Show the ball
+    isRunning = true;
+}
+
+// Stops animating the ball
+function stopBall() {
+    clearInterval(interval);
+    document.body.style.overflow = "scroll" // Re-enable scrolling
+    ball.style.visibility = "hidden"; // Hide the ball
+    isRunning = false;
+    numClicks = 0;
 }

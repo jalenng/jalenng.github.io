@@ -85,11 +85,16 @@
     --itchio-button-color: #d96262;
 }  
 
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Titillium Web',sans-serif;
     background-color: var(--bg-color);
     margin: 0;
     color: var(--font-color);
+    height: 100%;
 }
 
 a {

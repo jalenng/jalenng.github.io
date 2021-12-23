@@ -1,7 +1,7 @@
 const SPLASHES = [
     'Computer Science @ SJSU.',
     'Game and Web Developer.',
-    'Loves learning new technologies.',
+    'Python, JS, C#, C++, and more.',
     'Check out my contacts below.'
 ]
 const CHARACTER_DELAY = 30
