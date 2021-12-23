@@ -45,13 +45,13 @@
                 <div class="about-left">
     
                     <div id="ball">
-                        <a href="https://en.wikipedia.org/wiki/Bouncing_ball">
-                            <img id="ball-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
+                        <a titlehref="https://en.wikipedia.org/wiki/Bouncing_ball">
+                            <img id="ball-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4" alt="ball">
                         </a>
                     </div>
     
-                    <a onclick="registerBallClick()">
-                        <img class="about-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4" alt="ball">
+                    <a title="Shh..." onclick="registerBallClick()">
+                        <img class="about-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4" alt="Profile picture">
                     </a>
     
                     <h1 class="about-title">
@@ -64,9 +64,11 @@
                     <ul class="contact" >
                         <li>
                             <a 
+                                title="LinkedIn"
                                 class="contact-button" id="linkedin-button"
                                 aria-label="LinkedIn" title="LinkedIn" 
-                                href="https://www.linkedin.com/in/jalen-ng/" target="_blank"
+                                href="https://www.linkedin.com/in/jalen-ng/" 
+                                target="_blank" rel="noopener noreferrer"
                             >
                                     <img class=contact-button-image src="img/contact/linkedin.png" alt="LinkedIn button">
                             </a>
@@ -74,18 +76,20 @@
 
                         <li>
                             <a 
+                                title="Email"
                                 class="contact-button" id="email-button"
                                 href="mailto:jalen.ng@sjsu.edu" target="_blank"
-                                aria-label="Email" title="Email" 
+                                aria-label="Email" title="Email" rel="noopener"
                             >
                                 <img class=contact-button-image src="img/contact/email.png" alt="Email button">
                             </a>
                         </li>
                         <li>
                             <a 
+                                title="itch.io"
                                 class="contact-button" id="itchio-button"
                                 href="https://jayn.itch.io/" target="_blank"
-                                aria-label="itch.io" title="itch.io"
+                                aria-label="itch.io" title="itch.io" rel="noopener noreferrer"
                             >
                                 <img class=contact-button-image src="img/contact/itchio.png" alt="itch.io button">
                             </a>
@@ -112,8 +116,8 @@
 
 <!-- Scripts -->
 <script src="scripts/themeswitcher.js"></script>
-<script src="scripts/repositories.js"></script>
-<script src="scripts/splash.js"></script>
 <script src="scripts/ball.js" language="JavaScript"></script>
+<script src="scripts/splash.js"></script>
+<script src="scripts/repositories.js"></script>
 
 </html>
