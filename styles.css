@@ -204,7 +204,7 @@ h3 {
 }
 
 #ball {
-    position: absolute;
+    position: fixed;
     visibility: hidden;
 }
 

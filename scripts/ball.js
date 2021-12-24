@@ -31,13 +31,17 @@ function updateBall () {
   width = document.body.clientWidth
   height = document.body.clientHeight
 
+  // Scroll offsets
+  xOffset = document.body.scrollLeft
+  yOffset = document.body.scrollTop
+
   // Ball size
   hOffset = ball.offsetHeight
   wOffset = ball.offsetWidth
 
   // Update the ball style properties
-  ball.style.left = `${xPos}px`
-  ball.style.top = `${yPos}px`
+  ball.style.left = `${xPos + xOffset}px`
+  ball.style.top = `${yPos + yOffset}px`
   ball.style.transform = `rotate(${rotation}deg)`
 
   // Physics integration
@@ -48,7 +52,7 @@ function updateBall () {
   rotation += angularVel
 
   // Vertical velocity
-  if (yPos >= (height - hOffset)) {
+  if (yPos >= (height - hOffset + yOffset)) {
     yPos = height - hOffset
     if ((-vy * 0.95) < 0.25) {
       vy = (-vy * 0.95) + 0.25
@@ -58,7 +62,7 @@ function updateBall () {
   }
 
   // Horizontal velocity
-  if (xPos < 0) {
+  if (xPos < xOffset) {
     xPos = 0
     if ((-vx * 0.95) > 0.5) {
       vx = (-vx * 0.95) - 0.5
@@ -66,7 +70,7 @@ function updateBall () {
       vx = 0
     }
   }
-  if (xPos >= (width - wOffset)) {
+  if (xPos >= (width - wOffset + xOffset)) {
     xPos = (width - wOffset)
     if ((-vx * 0.95) < -0.5) {
       vx = (-vx * 0.95) + 0.5
@@ -88,8 +92,8 @@ function registerBallClick () {
 // Initializes the ball's position
 function initializePosition () {
   let rect = ballButton.getBoundingClientRect()
-  xPos = rect.left
-  yPos = rect.top
+  xPos = rect.left + document.body.scrollLeft
+  yPos = rect.top + document.body.scrollTop
 }
 
 // Begins animating the ball
