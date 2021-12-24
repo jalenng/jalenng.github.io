@@ -45,7 +45,7 @@
 
 .theme-light {
     --bg-color: #ffffff;
-	--bg-image-url: url(img/background/light.jpg); 
+	--bg-image-url: url(img/background/light.png); 
 	--bg-image-filter: brightness(1.3);
 
 	--font-color: #000000;
@@ -66,7 +66,7 @@
 
 .theme-dark {
     --bg-color: #000000;
-	--bg-image-url: url(img/background/dark.jpg); 
+	--bg-image-url: url(img/background/dark.png); 
 	--bg-image-filter: brightness(0.3);
 
 	--font-color: #ffffff;
@@ -99,10 +99,15 @@ body {
 
 a {
     color: var(--link-color);
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+    transition-property: transform, filter, z-index;
 }
 
 a:hover {
-    filter: drop-shadow(0 0 .5rem var(--hover-color));
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 1.5rem var(--hover-color));
+    z-index: 10000;
 }
 
 h3 {
@@ -204,10 +209,14 @@ h3 {
 }
 
 #ball-image {
-    width: 164px;
-    height: 164px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    filter: drop-shadow(0 0 .5rem var(--hover-color));
+    filter: drop-shadow(0 0 1.5rem var(--hover-color));
+}
+
+#ball-button {
+    display: inline-block;
 }
 
 #toggle-theme-button {
@@ -284,10 +293,10 @@ h3 {
 }
 
 .about-image {
+    margin: 0px;
     border-radius: 6px;
-    max-width: 164px;
-    margin-top: 40px;
-    margin-right: 30px;
+    max-width: 180px;
+    max-height: 180px;
 }
 
 .about-text,.about-title {
@@ -348,6 +357,7 @@ h3 {
     align-items: stretch;
     overflow: hidden;
 }
+
 .repo-left {
     width: 180px;
     height: 180px;

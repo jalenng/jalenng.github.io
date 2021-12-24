@@ -37,8 +37,6 @@ function getIconURL (user, repo) {
   // Try to match the comment with the icon comment tag in the README
   const imageURLMatch = readme.match(MD_ICON_COMMENT_REGEX)
 
-  console.log(imageURLMatch)
-
   if (imageURLMatch) {
     imageURL = imageURLMatch[0]
   }
@@ -127,4 +125,4 @@ function createElements () {
   }
 }
 
-setTimeout(createElements, 0)
+window.addEventListener('load', createElements)
