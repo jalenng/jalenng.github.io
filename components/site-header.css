@@ -1,5 +1,10 @@
+:host {
+  --vertical-width: 150px;
+  --horizontal-height: 88px;
+}
+
 .header {
-  width: 150px;
+  width: var(--vertical-width);
   height: 100%;
   background-color: var(--background-secondary);
   color: var(--foreground);
@@ -77,7 +82,7 @@
     padding: 12px 16px;
     flex-direction: row;
     align-items: center;
-    min-height: 88px;
+    height: var(--horizontal-height);
     > * + * {
       margin-top: 0;
       margin-left: 16px;
