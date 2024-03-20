@@ -14,6 +14,8 @@
 }
 
 @media only screen and (max-width: 800px) {
-  --content-container-padding-start: 32px;
-  --content-container-padding-end: 32px;
+  .content-container {
+    --content-container-padding-start: 24px;
+    --content-container-padding-end: 24px;
+  }
 }
