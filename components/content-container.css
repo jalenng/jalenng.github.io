@@ -1,6 +1,6 @@
 .content-container {
-  --content-container-padding-start: 32px;
-  --content-container-padding-end: 32px;
+  --content-container-padding-start: 48px;
+  --content-container-padding-end: 48px;
 
   position: relative;
   padding: 0;
@@ -11,4 +11,9 @@
   > * + * {
     margin-top: 32px;
   }
+}
+
+@media only screen and (max-width: 800px) {
+  --content-container-padding-start: 32px;
+  --content-container-padding-end: 32px;
 }

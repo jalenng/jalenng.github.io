@@ -15,7 +15,7 @@ class SiteHeader extends HTMLElement {
         <!-- jalenng -->
         <div class="tab-item home-item">
           <a href="/">
-            <img src="img/profile.png" width="32" height="32" />
+            <img src="img/profile.png" width="32" height="32" alt="Profile" />
             <div class="tab-item__label">
               jalenng
             </div>
