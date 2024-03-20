@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width" name="viewport">
+
+  <title>jalenng / projects</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="styles/global.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/profile.png" />
+
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- My components -->
+  <script src="components/page-layout.js"></script>
+  <script src="components/site-header.js"></script>
+  <script src="components/content-container.js"></script>
+  <script src="components/project-item.js"></script>
+  <script src="components/carousel-elem.js"></script>
+</head>
+
+<body>
+
+  <page-layout>
+
+    <!-- header -->
+    <site-header slot="nav" path="projects"></site-header>
+
+    <!-- echobot -->
+    <content-container>
+      <project-item id="echobot">
+        <img slot="icon" src="img/projects/echobot-logo.png" alt="echobot logo" />
+        <h1 slot="title">echobot</h1>
+        <p slot="description">
+          A text-to-speech and music bot for Discord servers
+        </p>
+        <carousel-elem slot="content">
+          <img src="img/projects/echobot-1.png" alt="echobot screenshot" draggable="false" />
+          <img src="img/projects/echobot-2.png" alt="echobot screenshot" draggable="false" />
+          <img src="img/projects/echobot-3.png" alt="echobot screenshot" draggable="false" />
+        </carousel-elem>
+        <p slot="footer-left">
+          <b>
+            Made with discord.js
+          </b>
+        </p>
+        <div slot="footer-right">
+          <a class="button primary"
+            href="https://discord.com/oauth2/authorize?&client_id=802833020880158730&scope=bot%20applications.commands&permissions=3271744"
+            target="_blank" rel="noopener noreferrer">
+            <span>Add to server</span>
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+          <a class="button" href="https://github.com/jalenng/echobot">
+            <span>GitHub</span>
+          </a>
+        </div>
+      </project-item>
+    </content-container>
+
+    <!-- unicorn-hat-hd-clock -->
+    <content-container>
+      <project-item id="unicorn-hat-hd-clock">
+        <img slot="icon" src="img/projects/unicorn-hat-hd-clock-logo.png" alt="unicorn-hat-hd-clock logo" />
+        <h1 slot="title">unicorn-hat-hd-clock</h1>
+        <p slot="description">
+          A digital clock with weather status on a Pimoroni Unicorn HAT HD for the Raspberry Pi
+        </p>
+        <carousel-elem slot="content">
+          <img src="img/projects/unicorn-hat-hd-clock-1.jpg" alt="unicorn-hat-hd-clock screenshot" draggable="false" />
+          <img src="img/projects/unicorn-hat-hd-clock-2.gif" alt="unicorn-hat-hd-clock screenshot" draggable="false" />
+          <img src="img/projects/unicorn-hat-hd-clock-3.gif" alt="unicorn-hat-hd-clock screenshot" draggable="false" />
+        </carousel-elem>
+        <p slot="footer-left">
+          <b>
+            Scripted in Python
+          </b>
+        </p>
+        <div slot="footer-right">
+          <a class="button" href="https://github.com/jalenng/unicorn-hat-hd-clock">
+            <span>GitHub</span>
+          </a>
+        </div>
+      </project-item>
+    </content-container>
+
+    <!-- Twenty -->
+    <content-container>
+      <project-item id="Twenty">
+        <img slot="icon" src="img/projects/twenty-logo.png" alt="Twenty logo" />
+        <h1 slot="title">Twenty</h1>
+        <p slot="description">
+          A customizable timer that reminds you to take eye breaks
+        </p>
+        <carousel-elem slot="content">
+          <img src="img/projects/twenty-1.png" alt="Twenty screenshot" draggable="false" />
+          <img src="img/projects/twenty-2.png" alt="Twenty screenshot" draggable="false" />
+          <img src="img/projects/twenty-3.png" alt="Twenty screenshot" draggable="false" />
+          <img src="img/projects/twenty-4.png" alt="Twenty screenshot" draggable="false" />
+        </carousel-elem>
+        <p slot="footer-left">
+          <b>
+            Made with Electron and React
+          </b>
+        </p>
+        <div slot="footer-right">
+          <a class="button" href="https://github.com/jalenng/twenty">
+            <span>GitHub</span>
+          </a>
+        </div>
+      </project-item>
+    </content-container>
+
+  </page-layout>
+
+</body>
+
+</html>

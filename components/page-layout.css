@@ -1,0 +1,34 @@
+.page-layout {
+  --side-padding-size: 100px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100vh;
+  align-items: stretch;
+}
+.page-nav {
+  padding-left: var(--side-padding-size);
+  background-color: var(--background-secondary);
+}
+.page-content {
+  padding-left: 0;
+  padding-right: var(--side-padding-size);
+  padding-top: 64px;
+  padding-bottom: 0px;
+  background-color: var(--background-primary);
+
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media only screen and (max-width: 800px) {
+  .page-layout {
+    --side-padding-size: 32px;
+    flex-direction: column;
+  }
+
+  .page-content {
+    padding: 0;
+  }
+}

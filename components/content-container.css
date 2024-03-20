@@ -1,0 +1,14 @@
+.content-container {
+  --content-container-padding-start: 32px;
+  --content-container-padding-end: 32px;
+
+  position: relative;
+  padding: 0;
+  padding-left: var(--content-container-padding-start);
+  padding-right: var(--content-container-padding-end);
+  margin: 64px 0;
+
+  > * + * {
+    margin-top: 32px;
+  }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width" name="viewport">
+
+  <title>jalenng / games</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="styles/global.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/profile.png" />
+
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- My components -->
+  <script src="components/page-layout.js"></script>
+  <script src="components/site-header.js"></script>
+  <script src="components/content-container.js"></script>
+  <script src="components/project-item.js"></script>
+  <script src="components/carousel-elem.js"></script>
+</head>
+
+<body>
+
+  <page-layout>
+
+    <!-- header -->
+    <site-header slot="nav" path="games"></site-header>
+
+    <!-- Draw -->
+    <content-container>
+      <project-item id="draw">
+        <img slot="icon" src="img/games/draw-logo.png" alt="Draw logo" />
+        <h1 slot="title">Draw</h1>
+        <p slot="description">
+          A 2D sidescroller and artistic story-rich journey of grief and acceptance through the
+          doodles of Nathan, a high schooler dealing with the recent loss of a friend.
+        </p>
+        <carousel-elem slot="content">
+          <img src="img/games/draw-1.png" alt="Draw screenshot" draggable="false" />
+          <img src="img/games/draw-2.png" alt="Draw screenshot" draggable="false" />
+          <img src="img/games/draw-3.png" alt="Draw screenshot" draggable="false" />
+          <img src="img/games/draw-4.png" alt="Draw screenshot" draggable="false" />
+        </carousel-elem>
+        <p slot="footer-left">
+          <b>
+            Made in Unity with C#
+          </b>
+        </p>
+        <div slot="footer-right">
+          <a class="button primary" href="https://store.steampowered.com/app/2473980/Draw/" target="_blank"
+            rel="noopener noreferrer">
+            <span>Steam</span>
+            <i class="bi bi-steam"></i>
+          </a>
+          <a class="button" href="https://github.com/jalenng/Draw">
+            <span>GitHub</span>
+          </a>
+        </div>
+      </project-item>
+    </content-container>
+
+    <!-- what are you doing? -->
+    <content-container>
+      <project-item id="what-are-you-doing">
+        <img slot="icon" src="img/games/what-are-you-doing-logo.png" alt="what are you doing? logo" />
+        <h1 slot="title">what are you doing?</h1>
+        <p slot="description">
+          Created in 10 hours for the MADE @ THE MADE game jam.
+        </p>
+        <p slot="footer-left">
+          <b>
+            Made with HTML, CSS, and JS
+          </b>
+        </p>
+        <div slot="footer-right">
+          <a class="button primary" href="https://jaygantic.itch.io/what-are-you-doing" target="_blank"
+            rel="noopener noreferrer">
+            <span>itch.io</span>
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+          <a class="button" href="https://github.com/jalenng/what-are-you-doing">
+            <span>GitHub</span>
+          </a>
+        </div>
+      </project-item>
+    </content-container>
+
+    <!-- Radiating Happiness -->
+    <content-container>
+      <project-item id="radiating-happiness">
+        <img slot="icon" src="img/games/radiating-happiness-logo.png" alt="Radiating Happiness logo" />
+        <h1 slot="title">Radiating Happiness</h1>
+        <p slot="description">
+          Dating simulator game based in a fictional university named Cupid University.
+        </p>
+        <carousel-elem slot="content">
+          <img src="img/games/radiating-happiness-1.png" alt="Radiating Happiness screenshot" draggable="false" />
+          <img src="img/games/radiating-happiness-2.png" alt="Radiating Happiness screenshot" draggable="false" />
+          <img src="img/games/radiating-happiness-3.png" alt="Radiating Happiness screenshot" draggable="false" />
+        </carousel-elem>
+        <p slot="footer-left">
+          <b>
+            Made in RenPy
+          </b>
+        </p>
+        <div slot="footer-right">
+          <a class="button primary" href="https://aryan-m.itch.io/radiating-happiness" target="_blank"
+            rel="noopener noreferrer">
+            <span>itch.io</span>
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+          <a class="button" href="https://play.google.com/store/apps/details?id=com.jaygantic.radiatinghappiness"
+            target="_blank" rel="noopener noreferrer">
+            <span>Google Play</span>
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+          <a class="button" href="https://github.com/aryanmaheshwari/RadiatingHappiness">
+            <span>GitHub</span>
+          </a>
+        </div>
+      </project-item>
+    </content-container>
+
+  </page-layout>
+
+</body>
+
+</html>

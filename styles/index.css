@@ -1,0 +1,5 @@
+h1 {
+  font-weight: var(--font-weight-light);
+  margin-top: 64px;
+  margin-bottom: 32px;
+}

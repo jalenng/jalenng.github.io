@@ -1,123 +1,159 @@
 <!DOCTYPE html>
 
-<html lang="en" class="theme-dark">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=0.8" name="viewport">
+  <meta charset="utf-8">
+  <meta content="width=device-width" name="viewport">
 
-    <title>jalenng</title>
-    
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="icon" href="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4">
+  <title>jalenng</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="styles/global.css">
+  <link rel="stylesheet" type="text/css" href="styles/index.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/profile.png" />
+
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- My components -->
+  <script src="components/page-layout.js"></script>
+  <script src="components/site-header.js"></script>
+  <script src="components/content-container.js"></script>
+  <script src="components/home-section.js"></script>
+  <script src="components/carousel-elem.js"></script>
+  <script src="components/card-elem.js"></script>
 </head>
 
 <body>
-    <div class="bg-img"></div>
 
-    <div id="header">
-        <div class="container">
-            <nav>
-                <ul id="header-nav">
-                    <li>
-                        <a 
-                            id="toggle-theme-button" onclick="toggleTheme()" 
-                            aria-label="Toggle theme" title="Toggle theme" 
-                        >☀</a>
-                    </li>
-                    <li>
-                        <a href="archive.html">Archive</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/jalenng" id="filled-nav">GitHub Profile</a>
-                    </li>
-                </ul>
-            </nav>
+  <page-layout>
+
+    <site-header slot="nav" hide-tabs></site-header>
+
+    <content-container>
+      <h1>
+        I'm <strong>Jalen</strong>.
+        <br />
+        I like making stuff.
+      </h1>
+
+      <!-- Games -->
+      <home-section>
+        <div slot="header-left">
+          <i class="bi bi-dpad-fill"></i>
+          &nbsp;
+          <span>Games</span>
         </div>
-    </div>
 
-    <div id="content">
+        <div slot="header-right">
+          <a class="button" href="games.html">
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
 
-        <div class="container">
+        <carousel-elem>
+          <a href="games.html#draw" draggable="false">
+            <card-elem>
+              <img slot="background" src="img/games/draw-1.png" />
+              <span>Draw</span>
+            </card-elem>
+          </a>
+          <a href="games.html#radiating-happiness" draggable="false">
+            <card-elem>
+              <img slot="background" src="img/games/radiating-happiness-1.png" />
+              <span> Radiating Happiness </span>
+            </card-elem>
+          </a>
+        </carousel-elem>
+      </home-section>
 
-            <div class="about">
+      <!-- Projects -->
+      <home-section>
+        <div slot="header-left">
+          <i class="bi bi-folder-fill"></i>
+          &nbsp;
+          <span>Projects</span>
+        </div>
 
-                <div class="about-left">
-    
-                    <a id="ball-button" title="Shh..." onclick="registerBallClick()">
-                        <img class="about-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4" alt="Profile picture">
-                    </a>
-    
-                    <h1 class="about-title">
-                        jalenng
-                    </h1>
-                    <div class="about-text" id="splash">
-                        <!-- Will be updated by splash.js -->
-                    </div>
-    
-                    <ul class="contact" >
-                        <li>
-                            <a 
-                                title="LinkedIn"
-                                class="contact-button" id="linkedin-button"
-                                aria-label="LinkedIn" title="LinkedIn" 
-                                href="https://www.linkedin.com/in/jalen-ng/" 
-                                target="_blank" rel="noopener noreferrer"
-                            >
-                                    <img class=contact-button-image src="img/contact/linkedin.png" alt="LinkedIn button">
-                            </a>
-                        </li>
+        <div slot="header-right">
+          <a class="button" href="projects.html">
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
 
-                        <li>
-                            <a 
-                                title="Email"
-                                class="contact-button" id="email-button"
-                                href="mailto:jalen.ng@sjsu.edu" target="_blank"
-                                aria-label="Email" title="Email" rel="noopener"
-                            >
-                                <img class=contact-button-image src="img/contact/email.png" alt="Email button">
-                            </a>
-                        </li>
-                        <li>
-                            <a 
-                                title="itch.io"
-                                class="contact-button" id="itchio-button"
-                                href="https://jayn.itch.io/" target="_blank"
-                                aria-label="itch.io" title="itch.io" rel="noopener noreferrer"
-                            >
-                                <img class=contact-button-image src="img/contact/itchio.png" alt="itch.io button">
-                            </a>
-                        </li>
-                    </ul>
-    
-                </div>
-    
-                <div class="about-right">
-    
-                    <div class="repositories">
-                        <!-- Will be populated by repositories.js -->
-                    </div>
+        <carousel-elem>
+          <a href="projects.html#unicorn-hat-hd-clock" draggable="false">
+            <card-elem>
+              <img slot="background" src="img/projects/unicorn-hat-hd-clock-1.jpg" />
+              <span> unicorn-hat-hd-clock</span>
+            </card-elem>
+          </a>
+          <a href="projects.html#echobot" draggable="false">
+            <card-elem>
+              <img slot="background" src="img/projects/echobot-2.png" />
+              <span>echobot</span>
+            </card-elem>
+          </a>
+          <a href="projects.html#twenty" draggable="false">
+            <card-elem>
+              <img slot="background" src="img/projects/twenty-1.png" />
+              <span>Twenty</span>
+            </card-elem>
+          </a>
+        </carousel-elem>
+      </home-section>
+    </content-container>
 
-                </div>
-    
-            </div>
+    <content-container>
+      <h1>More about me.</h1>
 
-        </div>      
+      <!-- CV -->
+      <home-section>
+        <div slot="header-left">
+          <i class="bi bi-file-text-fill"></i>
+          &nbsp;
+          <span>CV</span>
+        </div>
 
-    </div>
-    
+        <div slot="header-right">
+          <a class="button" href="cv.html">
+            <span>View</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+      </home-section>
+
+      <!-- Links -->
+      <home-section>
+        <div slot="header-left">
+          <i class="bi bi-link-45deg"></i>
+          &nbsp;
+          <span>Links</span>
+        </div>
+
+        <div slot="header-right">
+          <a class="button" href="https://www.linkedin.com/in/jalen-ng/">
+            <span>Linkedin</span>
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a class="button" href="https://www.linkedin.com/in/jalen-ng/">
+            <span>itch.io</span>
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </home-section>
+    </content-container>
+
+  </page-layout>
+
 </body>
-
-<div id="ball">
-    <a titlehref="https://en.wikipedia.org/wiki/Bouncing_ball">
-        <img id="ball-image" src="https://avatars2.githubusercontent.com/u/42555186?s=460&v=4" alt="ball">
-    </a>
-</div>
-
-<!-- Scripts -->
-<script src="scripts/themeswitcher.js"></script>
-<script src="scripts/ball.js"></script>
-<script src="scripts/splash.js"></script>
-<script src="scripts/repositories.js"></script>
 
 </html>
