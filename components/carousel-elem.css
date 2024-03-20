@@ -25,7 +25,7 @@
 }
 
 .carousel-scrollable {
-  height: 200px;
+  height: 172px;
   display: flex;
   align-items: stretch;
   overflow-x: auto;
