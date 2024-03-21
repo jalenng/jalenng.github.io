@@ -45,6 +45,10 @@
 
   &.grabbing {
     cursor: grabbing;
+    /* Don't allow click events on children elements when the carousel is being dragged */
+    ::slotted(*) {
+      pointer-events: none;
+    }
   }
 }
 
@@ -54,6 +58,11 @@
   filter: var(--drop-shadow);
   user-select: none;
   -webkit-user-select: none;
+}
+
+.carousel-scrollable ::slotted(a) {
+  width: fit-content;
+  height: 100%;
 }
 
 .carousel-scrollable ::slotted(:not(:first-child)) {

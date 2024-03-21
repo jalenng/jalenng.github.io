@@ -18,6 +18,7 @@ class CarouselElem extends HTMLElement {
     `;
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
+    this.mouseDown = false;
     this.dragging = false;
     this.startX = 0;
     this.deltaX = 0;
@@ -39,9 +40,8 @@ class CarouselElem extends HTMLElement {
   handleMouseDown(event) {
     event.preventDefault();
     event.stopPropagation();
-    this.dragging = true;
+    this.mouseDown = true;
     this.startX = event.clientX;
-    this.scrollableDiv.classList.add("grabbing");
     cancelAnimationFrame(this.animationId);
   }
   handleMouseUp(event) {
@@ -53,16 +53,22 @@ class CarouselElem extends HTMLElement {
     this.endDrag();
   }
   endDrag() {
+    this.mouseDown = false;
     this.dragging = false;
     this.startX = 0;
-    this.scrollableDiv.classList.remove("grabbing");
     this.animateMomentum();
+    setTimeout(() => this.scrollableDiv.classList.remove("grabbing"));
   }
   handleMouseMove(event) {
-    if (!this.dragging) return;
-    this.deltaX = event.clientX - this.startX;
-    this.scrollableDiv.scrollLeft -= this.deltaX;
-    this.startX = event.clientX;
+    if (this.mouseDown) {
+      this.dragging = true;
+      this.scrollableDiv.classList.add("grabbing");
+    }
+    if (this.dragging) {
+      this.deltaX = event.clientX - this.startX;
+      this.scrollableDiv.scrollLeft -= this.deltaX;
+      this.startX = event.clientX;
+    }
   }
   animateMomentum() {
     const decayRate = 0.9; // Adjust this value for faster/slower decay
