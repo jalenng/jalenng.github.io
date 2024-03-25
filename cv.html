@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width" name="viewport">
+
+  <title>jalenng / cv</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="styles/global.css">
+  <link rel="stylesheet" type="text/css" href="styles/cv.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/profile.png" />
+
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- My components -->
+  <script src="components/page-layout.js"></script>
+  <script src="components/site-header.js"></script>
+  <script src="components/content-container.js"></script>
+  <script src="components/project-item.js"></script>
+</head>
+
+<body>
+
+  <page-layout>
+
+    <!-- header -->
+    <site-header slot="nav" path="cv"></site-header>
+
+    <content-container>
+      <h2>Work Experience</h2>
+
+      <!-- zoom -->
+      <project-item id="zoom">
+        <img slot="icon" src="img/cv/zoom-logo.jpg" alt="Zoom logo" />
+        <h1 slot="title">
+          Software Development Engineer
+        </h1>
+        <b slot="description">
+          Zoom Video Communications, Inc. - <i>San José, CA</i>
+        </b>
+        <ul slot="content">
+          <li>
+            Build and extend functionality to the desktop and mobile Zoom Mail Client with <b>Vue.js</b>
+          </li>
+          <li>
+            Work across teams to deliver large-scale features (e.g., drag-and-drop, split-view) successfully
+          </li>
+          <li>
+            Demonstrate attention to detail by collaborating with designer to polish UI and improve UX
+          </li>
+          <li>
+            Actively promote refactoring and documentation to streamline development and reduce tech debt
+          </li>
+          <li>
+            Contribute to a timely release of the Mail and Calendar service in a fast-paced work environment
+          </li>
+        </ul>
+        <p slot="footer-left">
+          <b> July 2022 - Present </b>
+        </p>
+        </div>
+      </project-item>
+
+      <!-- student union inc. of sjsu -->
+      <project-item id="student-union-inc-of-sjsu" hide-dashed-line>
+        <img slot="icon" src="img/cv/sjsu-logo.png" alt="SJSU logo" />
+        <h1 slot="title">
+          Computer Services Technician
+        </h1>
+        <b slot="description">
+          Student Union Inc. of SJSU - <i>San José, CA</i>
+        </b>
+        <ul slot="content">
+          <li>
+            Resolved help-desk tickets and provided desktop support to 150+ employees across departments
+          </li>
+          <li>
+            Deployed and troubleshooted workstations and specialized IT systems to ensure optimal operations
+          </li>
+          <li>
+            Wrote <b>PowerShell</b> scripts to automate routine IT operations across 140+ computers
+          </li>
+        </ul>
+        <p slot="footer-left">
+          <b> Nov. 2019 - May 2022 </b>
+        </p>
+        </div>
+      </project-item>
+
+    </content-container>
+
+    <content-container>
+
+      <h2>Education</h2>
+
+      <project-item id="sjsu" hide-dashed-line>
+        <img slot="icon" src="img/cv/sjsu-logo.png" alt="SJSU logo" />
+        <h1 slot="title">
+          Bachelor of Science, Computer Science
+        </h1>
+        <b slot="description">
+          San José State University - <i>San José, CA</i>
+        </b>
+        <ul slot="content">
+          <li>
+            Summa Cum Laude – GPA: 3.93
+          </li>
+          <li>
+            Coursework: Advanced C++, Advanced Python, Artificial Intelligence, Computer Graphics, Data Structures and
+            Algorithms, Game Programming, Game Studies, Object-Oriented Design, Operating Systems, Technical Writing
+          </li>
+        </ul>
+        <p slot="footer-left">
+          <b> Nov. 2019 – May 2022 </b>
+        </p>
+        </div>
+      </project-item>
+
+    </content-container>
+
+  </page-layout>
+
+</body>
+
+</html>

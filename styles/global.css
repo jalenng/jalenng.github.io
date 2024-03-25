@@ -42,6 +42,9 @@ body {
   --font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
 
   /* Type ramp */
   --font-size-xxs: 0.625rem; /* 10px */
@@ -74,7 +77,6 @@ body {
 }
 
 /* Font styles */
-p,
 .text--body-small {
   font-size: var(--font-size-s);
   line-height: var(--line-height-s);

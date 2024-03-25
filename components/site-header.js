@@ -43,7 +43,7 @@ class SiteHeader extends HTMLElement {
             </a>
           </li>
           <!-- cv -->
-          <!-- <li data-path="cv" class="tab-item">
+          <li data-path="cv" class="tab-item">
             <a href="cv">
               <i class="bi bi-file-text unselected-icon"></i>
               <i class="bi bi-file-text-fill selected-icon"></i>
@@ -51,7 +51,7 @@ class SiteHeader extends HTMLElement {
                 cv
               </div>
             </a>
-          </li> -->
+          </li>
         </ul>
       </header>
     `;

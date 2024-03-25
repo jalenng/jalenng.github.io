@@ -46,7 +46,13 @@ class ProjectItem extends HTMLElement {
     `;
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
-  connectedCallback() {}
+  connectedCallback() {
+    const hideDashedLine = this.hasAttribute("hide-dashed-line");
+    if (hideDashedLine) {
+      const elem = this.shadowRoot.querySelector(".project-item");
+      elem.classList.add("hide-dashed-line");
+    }
+  }
 }
 
 customElements.define("project-item", ProjectItem);

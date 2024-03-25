@@ -1,0 +1,6 @@
+h2 {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-b);
+  line-height: var(--line-height-b);
+  text-transform: uppercase;
+}

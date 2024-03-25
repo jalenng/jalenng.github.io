@@ -15,6 +15,7 @@
   line-height: 0;
   border: 1px solid var(--border);
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .project-item__icon ::slotted(img) {
@@ -49,6 +50,11 @@
   );
 }
 
+.project-item__content ::slotted(ol),
+.project-item__content ::slotted(ul) {
+  padding-inline-start: 24px;
+}
+
 .project-item__header {
   ::slotted(p) {
     margin-top: 16px;
@@ -62,7 +68,7 @@
   justify-content: space-between;
 }
 
-.dashed-line {
+:not(.hide-dashed-line) .dashed-line {
   position: absolute;
   background-image: linear-gradient(var(--border) 50%, transparent 0%);
   background-position: right;

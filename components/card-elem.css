@@ -36,5 +36,7 @@
   bottom: 0;
   left: 0;
   font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-b);
+  line-height: var(--line-height-b);
   filter: var(--drop-shadow);
 }
