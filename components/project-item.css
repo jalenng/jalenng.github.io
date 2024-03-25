@@ -25,7 +25,7 @@
 .project-item__content {
   top: 0;
   padding-left: var(--project-item-content-padding-start);
-  * + * {
+  > * + * {
     margin-top: 32px;
   }
 }
@@ -77,5 +77,8 @@
 @media only screen and (max-width: 800px) {
   .project-item__footer {
     display: block;
+    > * + * {
+      margin-top: 32px;
+    }
   }
 }

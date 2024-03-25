@@ -30,8 +30,14 @@ class ProjectItem extends HTMLElement {
           </div>
       
           <div class="project-item__footer">
-            <slot name="footer-left"></slot>
-            <slot name="footer-right"></slot>
+          
+            <div class="project-item-footer__left">
+              <slot name="footer-left"></slot>
+            </div>
+            <div class="project-item-footer__right">
+              <slot name="footer-right"></slot>
+            </div>
+            
           </div>
       
         </div>
