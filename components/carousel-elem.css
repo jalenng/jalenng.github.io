@@ -53,6 +53,7 @@
 }
 
 .carousel-scrollable ::slotted(*) {
+  box-sizing: border-box;
   border: 1px solid var(--border);
   border-radius: 8px;
   filter: var(--drop-shadow);
