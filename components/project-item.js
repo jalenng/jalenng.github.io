@@ -24,6 +24,24 @@ class ProjectItem extends HTMLElement {
     `;
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
+  connectedCallback() {
+    const stickyElem = this.shadowRoot.querySelector(".project-item__sticky");
+    const entireElem = this.shadowRoot.querySelector(".project-item");
+    const intersectionCallback = (entries, observer) => {
+      entireElem.style.setProperty(
+        "--intersection-ratio",
+        entries[0].intersectionRatio
+      );
+    };
+    const options = {
+      threshold: Array.from({ length: 101 }, (_, i) => i / 100),
+    };
+    const intersectionObserver = new IntersectionObserver(
+      intersectionCallback,
+      options
+    );
+    intersectionObserver.observe(stickyElem);
+  }
 }
 
 customElements.define("project-item", ProjectItem);

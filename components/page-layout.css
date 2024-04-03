@@ -6,7 +6,7 @@
   z-index: 9999;
   background-image: linear-gradient(
     to bottom,
-    var(--background-primary) 0%,
+    var(--background-primary) -100%,
     transparent 100%
   );
 }
