@@ -28,7 +28,6 @@
   <!-- My components -->
   <script src="components/page-layout.js"></script>
   <script src="components/site-header.js"></script>
-  <script src="components/home-section.js"></script>
   <script src="components/card-elem.js"></script>
 </head>
 
@@ -43,99 +42,68 @@
     </h1>
 
     <!-- Games -->
-    <home-section>
-      <div slot="header-left">
-        <i class="bi bi-dpad-fill"></i>&nbsp;<span>Games</span>
-      </div>
+    <h2>
+      <i class="bi bi-dpad-fill"></i>&nbsp;<span>Games</span>
+    </h2>
 
-      <!-- <div slot="header-right">
-        <a class="button" href="https://jaygantic.itch.io/">
-          <span>itch.io</span>
-          <i class="bi bi-arrow-up-right"></i>
-        </a>
-        <a class="button" href="games.html">
-          <i class="bi bi-chevron-right"></i>
-        </a>
-      </div> -->
-
-      <div class="card-wrap">
-        <a href="games.html#draw" draggable="false">
-          <card-elem>
-            <img slot="background" src="img/games/draw-1.png" alt="Draw screenshot" />
-            <span>Draw</span>
-          </card-elem>
-        </a>
-        <a href="games.html#what-are-you-doing" draggable="false">
-          <card-elem>
-            <img slot="background" src="img/games/what-are-you-doing-2.png" alt="what are you doing? screenshot" />
-            <span> what are you doing? </span>
-          </card-elem>
-        </a>
-        <a href="games.html#radiating-happiness" draggable="false">
-          <card-elem>
-            <img slot="background" src="img/games/radiating-happiness-1.png" alt="Radiating Happiness screenshot" />
-            <span> Radiating Happiness </span>
-          </card-elem>
-        </a>
-      </div>
-    </home-section>
+    <div class="card-wrap">
+      <card-elem href="games.html#draw">
+        <img slot="background" src="img/games/draw-1.png" alt="Draw screenshot" />
+        <span>Draw</span>
+      </card-elem>
+      <card-elem href="games.html#what-are-you-doing">
+        <img slot="background" src="img/games/what-are-you-doing-2.png" alt="what are you doing? screenshot" />
+        <span> what are you doing? </span>
+      </card-elem>
+      <card-elem href="games.html#radiating-happiness">
+        <img slot="background" src="img/games/radiating-happiness-1.png" alt="Radiating Happiness screenshot" />
+        <span> Radiating Happiness </span>
+      </card-elem>
+    </div>
 
     <!-- Projects -->
-    <home-section>
-      <div slot="header-left">
-        <i class="bi bi-folder-fill"></i>&nbsp;<span>Projects</span>
-      </div>
+    <h2>
+      <i class="bi bi-folder-fill"></i>&nbsp;<span>Projects</span>
+    </h2>
 
-      <!-- <div slot="header-right">
-        <a class="button" href="projects.html">
-          <i class="bi bi-chevron-right"></i>
-        </a>
-      </div> -->
-
-      <div class="card-wrap">
-        <a href="projects.html#unicorn-hat-hd-clock" draggable="false">
-          <card-elem>
-            <img slot="background" src="img/projects/unicorn-hat-hd-clock-1.jpg"
-              alt="unicorn-hat-hd-clock photograph" />
-            <span> unicorn-hat-hd-clock</span>
-          </card-elem>
-        </a>
-        <a href="projects.html#echobot" draggable="false">
-          <card-elem>
-            <img slot="background" src="img/projects/echobot-2.png" alt="echobot screenshot" />
-            <span>echobot</span>
-          </card-elem>
-        </a>
-        <a href="projects.html#twenty" draggable="false">
-          <card-elem>
-            <img slot="background" src="img/projects/twenty-1.png" alt="Twenty screenshot" />
-            <span>Twenty</span>
-          </card-elem>
-        </a>
-      </div>
-    </home-section>
+    <div class="card-wrap">
+      <card-elem href="projects.html#unicorn-hat-hd-clock">
+        <img slot="background" src="img/projects/unicorn-hat-hd-clock-1.jpg" alt="unicorn-hat-hd-clock photograph" />
+        <span> unicorn-hat-hd-clock</span>
+      </card-elem>
+      <card-elem href="projects.html#echobot">
+        <img slot="background" src="img/projects/echobot-2.png" alt="echobot screenshot" />
+        <span>echobot</span>
+      </card-elem>
+      <card-elem href="projects.html#twenty">
+        <img slot="background" src="img/projects/twenty-1.png" alt="Twenty screenshot" />
+        <span>Twenty</span>
+      </card-elem>
+    </div>
 
     <!-- Links -->
-    <home-section>
-      <div slot="header-left">
-        <i class="bi bi-link-45deg"></i>&nbsp;<span>Links</span>
-      </div>
+    <h2>
+      <i class="bi bi-link-45deg"></i>&nbsp;<span>Links</span>
+    </h2>
 
-      <div>
-        <a class="button primary" href="https://github.com/jalenng">
-          <span>GitHub</span>
-          <i class="bi bi-github"></i>
-        </a>
-        <a class="button" href="cv.html">
-          <span>CV</span>
-          <i class="bi bi-file-text"></i>
-        </a>
-        <a class="button" href="https://www.linkedin.com/in/jalen-ng/">
-          <span>LinkedIn</span>
-          <i class="bi bi-linkedin"></i>
-        </a>
-      </div>
-    </home-section>
+    <div class="button-wrap">
+      <a class="button primary" href="https://github.com/jalenng">
+        <span>GitHub</span>
+        <i class="bi bi-github"></i>
+      </a>
+      <a class="button" href="cv.html">
+        <span>CV</span>
+        <i class="bi bi-file-text"></i>
+      </a>
+      <a class="button" href="https://www.linkedin.com/in/jalen-ng/">
+        <span>LinkedIn</span>
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a class="button" href="https://jaygantic.itch.io/">
+        <span>itch.io</span>
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
 
   </page-layout>
 

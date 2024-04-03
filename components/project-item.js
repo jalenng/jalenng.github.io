@@ -10,7 +10,7 @@ class ProjectItem extends HTMLElement {
       <link rel="stylesheet" href="components/project-item.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
       
-      <article class="project-item">
+      <section class="project-item">
 
         <div class="project-item__sticky">
           <slot></slot>
@@ -20,7 +20,7 @@ class ProjectItem extends HTMLElement {
           <slot name="images"></slot>
         </div>
       
-      </article>
+      </section>
     `;
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }

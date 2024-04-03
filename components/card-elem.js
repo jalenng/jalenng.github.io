@@ -10,7 +10,7 @@ class CardElem extends HTMLElement {
       <link rel="stylesheet" href="styles/global.css">
       <link rel="stylesheet" href="components/card-elem.css">
       
-      <div class="card-elem">
+      <a class="card-elem">
       
         <div class="background">
           <slot name="background"></slot>
@@ -20,11 +20,17 @@ class CardElem extends HTMLElement {
           <slot></slot>
         </div>
       
-      </div>
+      </a>
     `;
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
-  connectedCallback() {}
+  connectedCallback() {
+    // handle path attribute
+    const href = this.getAttribute("href");
+    const query = ".card-elem";
+    const elem = this.shadowRoot.querySelector(query);
+    elem.setAttribute("href", href);
+  }
 }
 
 customElements.define("card-elem", CardElem);
