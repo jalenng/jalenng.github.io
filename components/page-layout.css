@@ -1,49 +1,22 @@
-.page-layout {
-  --side-padding-size: 100px;
-
-  --sidebar-vertical-width: 150px;
-  --sidebar-horizontal-height: 88px;
-}
 .page-nav {
   top: 0;
-  bottom: 0;
   left: 0;
-  right: unset;
+  right: 0;
   position: fixed;
-  padding-left: var(--side-padding-size);
-  background-color: var(--background-secondary);
   z-index: 9999;
-}
-
-.page-nav ::slotted(site-header) {
-  --vertical-width: var(--sidebar-vertical-width);
-  --horizontal-height: var(--sidebar-horizontal-height);
+  background-image: linear-gradient(
+    to bottom,
+    var(--background-primary) 0%,
+    transparent 100%
+  );
 }
 
 .page-content {
-  padding-left: calc(var(--side-padding-size) + var(--sidebar-vertical-width));
-  padding-right: var(--side-padding-size);
-  padding-top: 64px;
-  padding-bottom: 0px;
+  margin: auto;
+  margin-top: 104px;
+  margin-bottom: 72px;
+  max-width: 1200px;
+  padding: 0 32px;
   background-color: var(--background-primary);
-  min-height: 100vh;
   box-sizing: border-box;
-
-  overflow: hidden;
-}
-
-@media only screen and (max-width: 800px) {
-  .page-layout {
-    flex-direction: column;
-  }
-  .page-nav {
-    top: 0;
-    bottom: unset;
-    left: 0;
-    right: 0;
-  }
-  .page-content {
-    padding: 0;
-    padding-top: var(--sidebar-horizontal-height);
-  }
 }

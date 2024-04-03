@@ -3,3 +3,12 @@ h1 {
   margin-top: 64px;
   margin-bottom: 32px;
 }
+
+.card-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  > * {
+    height: 200px;
+  }
+}

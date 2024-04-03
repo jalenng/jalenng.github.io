@@ -10,48 +10,19 @@ class ProjectItem extends HTMLElement {
       <link rel="stylesheet" href="components/project-item.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
       
-      <div class="project-item">
-      
-        <div class="dashed-line"></div>
-      
-        <div class="project-item__icon">
-          <slot name="icon"></slot>
+      <article class="project-item">
+
+        <div class="project-item__sticky">
+          <slot></slot>
+        </div>
+    
+        <div class="project-item__images">
+          <slot name="images"></slot>
         </div>
       
-        <div class="project-item__content">
-      
-          <div class="project-item__header">
-            <slot name="title"></slot>
-            <slot name="description"></slot>
-          </div>
-      
-          <div>
-            <slot name="content"></slot>
-          </div>
-      
-          <div class="project-item__footer">
-          
-            <div class="project-item-footer__left">
-              <slot name="footer-left"></slot>
-            </div>
-            <div class="project-item-footer__right">
-              <slot name="footer-right"></slot>
-            </div>
-            
-          </div>
-      
-        </div>
-      
-      </div>
+      </article>
     `;
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-  }
-  connectedCallback() {
-    const hideDashedLine = this.hasAttribute("hide-dashed-line");
-    if (hideDashedLine) {
-      const elem = this.shadowRoot.querySelector(".project-item");
-      elem.classList.add("hide-dashed-line");
-    }
   }
 }
 

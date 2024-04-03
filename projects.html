@@ -10,6 +10,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="styles/global.css">
+  <link rel="stylesheet" type="text/css" href="styles/projects.css">
 
   <!-- Favicon -->
   <link rel="icon" href="img/profile.png" />
@@ -20,14 +21,14 @@
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
 
   <!-- My components -->
   <script src="components/page-layout.js"></script>
   <script src="components/site-header.js"></script>
-  <script src="components/content-container.js"></script>
   <script src="components/project-item.js"></script>
-  <script src="components/carousel-elem.js"></script>
 </head>
 
 <body>
@@ -37,89 +38,104 @@
     <!-- header -->
     <site-header slot="nav" path="projects"></site-header>
 
-    <content-container>
-
-      <!-- echobot -->
-      <project-item id="echobot">
-        <img slot="icon" src="img/projects/echobot-logo.png" alt="echobot logo" />
-        <h1 slot="title">echobot</h1>
-        <p slot="description">
-          A text-to-speech and music bot for Discord servers
-        </p>
-        <carousel-elem slot="content">
-          <img src="img/projects/echobot-1.png" alt="echobot screenshot" draggable="false" />
-          <img src="img/projects/echobot-2.png" alt="echobot screenshot" draggable="false" />
-          <img src="img/projects/echobot-3.png" alt="echobot screenshot" draggable="false" />
-        </carousel-elem>
-        <p slot="footer-left">
-          <b>
-            Made with discord.js
-          </b>
-        </p>
-        <div slot="footer-right">
-          <a class="button primary"
-            href="https://discord.com/oauth2/authorize?&client_id=802833020880158730&scope=bot%20applications.commands&permissions=3271744"
-            target="_blank" rel="noopener noreferrer">
-            <span>Add to server</span>
-            <i class="bi bi-arrow-up-right"></i>
-          </a>
-          <a class="button" href="https://github.com/jalenng/echobot">
-            <span>GitHub</span>
-          </a>
+    <!-- echobot -->
+    <project-item id="echobot">
+      <span class="project-item__count">01/03</span>
+      <h1>echobot</h1>
+      <p class="project-item__description">
+        A text-to-speech and music bot for Discord servers
+      </p>
+      <p>
+        <b> Made with discord.js </b>
+      </p>
+      <div class="project-item__button-wrap">
+        <a class="button primary"
+          href="https://discord.com/oauth2/authorize?&client_id=802833020880158730&scope=bot%20applications.commands&permissions=3271744"
+          target="_blank" rel="noopener noreferrer">
+          <span>Add to server</span>
+          <i class="bi bi-arrow-up-right"></i>
+        </a>
+        <a class="button" href="https://github.com/jalenng/echobot">
+          <span>GitHub</span>
+        </a>
+      </div>
+      <div slot="images" class="project-item__images-wrap" style="aspect-ratio: 0.9">
+        <div style="left: 6%;top: 5%;width: 60%;rotate: -3deg;">
+          <img src="img/projects/echobot-1.png" alt="echobot screenshot" />
         </div>
-      </project-item>
-
-      <!-- unicorn-hat-hd-clock -->
-      <project-item id="unicorn-hat-hd-clock">
-        <img slot="icon" src="img/projects/unicorn-hat-hd-clock-logo.png" alt="unicorn-hat-hd-clock logo" />
-        <h1 slot="title">unicorn-hat-hd-clock</h1>
-        <p slot="description">
-          A digital clock with weather status on a Pimoroni Unicorn HAT HD for the Raspberry Pi
-        </p>
-        <carousel-elem slot="content">
-          <img src="img/projects/unicorn-hat-hd-clock-1.jpg" alt="unicorn-hat-hd-clock photograph" draggable="false" />
-          <img src="img/projects/unicorn-hat-hd-clock-2.gif" alt="unicorn-hat-hd-clock photograph" draggable="false" />
-          <img src="img/projects/unicorn-hat-hd-clock-3.gif" alt="unicorn-hat-hd-clock animated sprites"
-            draggable="false" />
-        </carousel-elem>
-        <p slot="footer-left">
-          <b>
-            Scripted in Python
-          </b>
-        </p>
-        <div slot="footer-right">
-          <a class="button" href="https://github.com/jalenng/unicorn-hat-hd-clock">
-            <span>GitHub</span>
-          </a>
+        <div style="left: 53%;top: 33%;width: 40%;rotate: 6deg;">
+          <img src="img/projects/echobot-2.png" alt="echobot screenshot" />
         </div>
-      </project-item>
-
-      <!-- Twenty -->
-      <project-item id="twenty" hide-dashed-line>
-        <img slot="icon" src="img/projects/twenty-logo.png" alt="Twenty logo" />
-        <h1 slot="title">Twenty</h1>
-        <p slot="description">
-          A customizable timer that reminds you to take eye breaks
-        </p>
-        <carousel-elem slot="content">
-          <img src="img/projects/twenty-1.png" alt="Twenty screenshot" draggable="false" />
-          <img src="img/projects/twenty-2.png" alt="Twenty screenshot" draggable="false" />
-          <img src="img/projects/twenty-3.png" alt="Twenty screenshot" draggable="false" />
-          <img src="img/projects/twenty-4.png" alt="Twenty screenshot" draggable="false" />
-        </carousel-elem>
-        <p slot="footer-left">
-          <b>
-            Made with Electron and React
-          </b>
-        </p>
-        <div slot="footer-right">
-          <a class="button" href="https://github.com/jalenng/twenty">
-            <span>GitHub</span>
-          </a>
+        <div style="left: 12%;top: 62%;width: 33%;rotate: -3deg;">
+          <img src="img/projects/echobot-3.png" alt="echobot screenshot" />
         </div>
-      </project-item>
+      </div>
+    </project-item>
 
-    </content-container>
+    <!-- unicorn-hat-hd-clock -->
+    <project-item id="unicorn-hat-hd-clock">
+      <span class="project-item__count">02/03</span>
+      <h1>unicorn-hat-hd-clock</h1>
+      <p class="project-item__description">
+        A digital clock with weather status on a Pimoroni Unicorn HAT HD for the Raspberry Pi
+      </p>
+      <p>
+        <b> Scripted in Python </b>
+      </p>
+      <div class="project-item__button-wrap">
+        <a class="button" href="https://github.com/jalenng/unicorn-hat-hd-clock">
+          <span>GitHub</span>
+        </a>
+      </div>
+      <div slot="images" class="project-item__images-wrap" style="aspect-ratio: 0.75">
+        <div style="left: 29%;top: 2%;width: 60%;rotate: 3deg;">
+          <img src="img/projects/unicorn-hat-hd-clock-1.jpg" alt="unicorn-hat-hd-clock photograph" />
+        </div>
+        <div style="left: 56%;top: 69%;width: 38%;rotate: 6deg;">
+          <img src="img/projects/unicorn-hat-hd-clock-2.gif" alt="unicorn-hat-hd-clock photograph" />
+        </div>
+        <div style="left: 8%;top: 50%;width: 42%;rotate: -8deg;">
+          <img src="img/projects/unicorn-hat-hd-clock-3.gif" alt="unicorn-hat-hd-clock animated sprites" />
+        </div>
+        <div class="no-border" style="left: 9%;top: 14%;width: 15%;rotate: -9.91deg;border-radius: 25%;">
+          <img slot="icon" src="img/projects/unicorn-hat-hd-clock-logo.png" alt="unicorn-hat-hd-clock logo" />
+        </div>
+      </div>
+    </project-item>
+
+    <!-- Twenty -->
+    <project-item id="twenty">
+      <span class="project-item__count">03/03</span>
+      <h1>Twenty</h1>
+      <p class="project-item__description">
+        A customizable timer that reminds you to take eye breaks
+      </p>
+      <p>
+        <b> Made with Electron and React </b>
+      </p>
+      <div class="project-item__button-wrap">
+        <a class="button" href="https://github.com/jalenng/twenty">
+          <span>GitHub</span>
+        </a>
+      </div>
+      <div slot="images" class="project-item__images-wrap" style="aspect-ratio: 0.6">
+        <div style="left: 18%;top: 30%;width: 80%;rotate: -4deg;">
+          <img src="img/projects/twenty-2.png" alt="Twenty screenshot" />
+        </div>
+        <div style="left: 8%;top: 64%;width: 80%;rotate: 4deg;">
+          <img src="img/projects/twenty-3.png" alt="Twenty screenshot" />
+        </div>
+        <div style="left: 8%;top: 4%;width: 35%;rotate: 2deg;">
+          <img src="img/projects/twenty-1.png" alt="Twenty screenshot" />
+        </div>
+        <div style="left: 48%;top: 17%;width: 40%;rotate: 9deg;">
+          <img src="img/projects/twenty-4.png" alt="Twenty screenshot" />
+        </div>
+        <div class="no-border" style="left: 80%;top: 60%;width: 15%;rotate: 2deg;border-radius: 25%;">
+          <img slot="icon" src="img/projects/twenty-logo.png" alt="Twenty logo" />
+        </div>
+      </div>
+    </project-item>
 
   </page-layout>
 

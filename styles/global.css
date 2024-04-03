@@ -1,24 +1,24 @@
 /* Color tokens */
 body {
   --foreground: #000000;
-  --background-primary: #f2f2f2;
+  --background-primary: #f7f7f7;
   --background-secondary: #ffffff;
   --border: #b3b3b3;
-  --drop-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.07))
-    drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.07));
+  --drop-shadow: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1))
+    drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.05))
+    drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.025))
+    drop-shadow(0px 16px 32px rgba(0, 0, 0, 0.0125));
 }
 
 /* body.dark { */
 @media (prefers-color-scheme: dark) {
   body {
-    --foreground: #f2f2f2;
-    --background-primary: #1a1a1a;
-    --background-secondary: #000000;
+    --foreground: #f7f7f7;
+    --background-primary: #0d0d0d;
+    --background-secondary: #1a1a1a;
     --border: #4d4d4d;
   }
 }
-
-@import url(https://fonts.googleapis.com/css?family=Lexend);
 
 /* Properties */
 body {
@@ -33,16 +33,15 @@ body {
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Transitions */
-  --transform-transition: transform 0.2s var(--ease-out-back);
-  --color-fade-transitions: color 0.2s var(--ease-out-expo),
-    background-color 0.2s var(--ease-out-expo),
-    box-shadow 0.2s var(--ease-out-expo), border-color 0.2s var(--ease-out-expo);
+  --button-hover-transition: transform 0.2s var(--ease-out-back),
+    box-shadow 0.2s var(--ease-out-back);
 
   /* Font */
-  --font-family: "Inter", sans-serif;
+  --font-family-1: "Inter", sans-serif;
+  --font-family-2: "Roboto Mono", monospace;
   font-optical-sizing: auto;
   font-style: normal;
-  
+
   font-size: var(--font-size-s);
   line-height: var(--line-height-s);
 
@@ -57,15 +56,15 @@ body {
   --font-size-xxxl: 2rem; /* 32px */
   --font-size-xxxxl: 3rem; /* 48px */
 
-  --line-height-xxs: 1rem; /* 16px */
-  --line-height-xs: 1rem; /* 16px */
-  --line-height-s: 1.5rem; /* 24px */
-  --line-height-b: 1.5rem; /* 24px */
-  --line-height-l: 2rem; /* 32px */
-  --line-height-xl: 2rem; /* 32px */
-  --line-height-xxl: 2rem; /* 32px */
-  --line-height-xxxl: 3rem; /* 48px */
-  --line-height-xxxxl: 4rem; /* 64px */
+  --line-height-xxs: calc(0.625rem * 1.5);
+  --line-height-xs: calc(0.75rem * 1.5);
+  --line-height-s: calc(0.875rem * 1.5);
+  --line-height-b: calc(1rem * 1.5);
+  --line-height-l: calc(1.125rem * 1.5);
+  --line-height-xl: calc(1.25rem * 1.5);
+  --line-height-xxl: calc(1.5rem * 1.5);
+  --line-height-xxxl: calc(2rem * 1.5);
+  --line-height-xxxxl: calc(3rem * 1.5);
 
   --font-weight-light: 300;
   --font-weight-normal: 400;
@@ -73,7 +72,7 @@ body {
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  font-family: var(--font-family);
+  font-family: var(--font-family-1);
 }
 
 /* Font styles */
@@ -96,23 +95,22 @@ h1,
 /* Button */
 .button,
 button {
-  padding: 3px 15px;
+  padding: 11px 15px;
+  box-sizing: border-box;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 4px;
   background-color: var(--background-secondary);
   color: var(--foreground);
   font-size: var(--font-size-b);
   line-height: var(--line-height-b);
   font-weight: var(--font-weight-normal);
-  font-family: var(--font-family);
-  transition: var(--transform-transition);
+  font-family: var(--font-family-2);
+  transition: var(--button-hover-transition);
+  text-align: center;
   text-decoration: none;
   text-transform: none;
   display: inline-block;
   white-space: nowrap;
-  > * + * {
-    margin-left: 4px;
-  }
 }
 .button:disabled,
 button:disabled {
@@ -121,10 +119,12 @@ button:disabled {
 .button:hover:not([disabled]),
 button:hover:not([disabled]) {
   transform: translate(0, -2px);
+  box-shadow: 0px 2px 0px var(--border);
 }
 .button:active:not([disabled]),
 button:active:not([disabled]) {
   transform: scale(0.97);
+  box-shadow: none;
 }
 .button.primary,
 button.primary {
@@ -138,10 +138,6 @@ button.primary {
 button.ghost {
   border-color: transparent;
   background-color: none;
-}
-.button:has(> i.bi:only-child),
-button:has(> i.bi:only-child) {
-  padding: 3px 7px;
 }
 
 /* Switch/slider */
@@ -170,7 +166,7 @@ button:has(> i.bi:only-child) {
   border: 1px solid var(--border);
   background-color: var(--background-secondary);
   transition: all 0.2s var(--ease-out-back);
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .slider:before {
@@ -195,13 +191,18 @@ input:checked + .slider {
 
 /* Links */
 a {
-  transition: var(--transform-transition);
+  transition: var(--button-hover-transition);
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 a:hover:not([disabled]) {
+  border: 1px solid var(--border);
   transform: translate(0, -2px);
+  box-shadow: 0px 2px 0px var(--border);
 }
 a:active:not([disabled]) {
   transform: scale(0.97);
+  box-shadow: none;
 }
 
 .content-container {

@@ -1,90 +1,41 @@
 .project-item {
-  --project-item-content-padding-start: 56px;
-
-  position: relative;
-  margin-bottom: 64px;
+  clear: both;
 }
 
-.project-item__icon {
+.project-item__sticky {
+  position: sticky;
   float: left;
-  margin-top: 8px;
-  width: 32px;
-  height: 32px;
-  background-color: var(--background-secondary);
-  border-radius: 8px;
-  line-height: 0;
-  border: 1px solid var(--border);
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.project-item__icon ::slotted(img) {
-  width: 100%;
-  height: 100%;
-}
-
-.project-item__content {
-  top: 0;
-  padding-left: var(--project-item-content-padding-start);
-  > * + * {
-    margin-top: 32px;
+  top: 104px;
+  padding: 72px 0;
+  width: 240px;
+  & ::slotted(*) {
+    margin: 24px 0;
   }
 }
 
-.project-item__content ::slotted(*) {
-  margin: 0;
+.project-item__images {
+  padding-left: 240px;
 }
 
-.project-item__content ::slotted(carousel-elem) {
-  --carousel-padding-start: calc(
-    var(--content-container-padding-start) +
-      var(--project-item-content-padding-start)
-  );
-  --carousel-padding-end: var(--content-container-padding-end);
-  display: block;
-  transform: translateX(calc(-1 * var(--carousel-padding-start)));
-  width: calc(
-    var(--content-container-padding-start) +
-      var(--project-item-content-padding-start) + 100% +
-      var(--content-container-padding-end)
-  );
-}
-
-.project-item__content ::slotted(ol),
-.project-item__content ::slotted(ul) {
+::slotted(ol),
+::slotted(ul) {
   padding-inline-start: 24px;
 }
 
-.project-item__header {
-  ::slotted(p) {
-    margin-top: 16px;
-  }
-}
-
-.project-item__footer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-:not(.hide-dashed-line) .dashed-line {
-  position: absolute;
-  background-image: linear-gradient(var(--border) 50%, transparent 0%);
-  background-position: right;
-  background-size: 1px 16px;
-  background-repeat: repeat-y;
-  margin: 0 15.5px;
-  width: 1px;
-  top: 40px;
-  bottom: -72px;
-}
-
 @media only screen and (max-width: 800px) {
-  .project-item__footer {
-    display: block;
-    > * + * {
-      margin-top: 32px;
-    }
+  .project-item {
+    margin: 72px 0;
+  }
+  .project-item__sticky {
+    position: relative;
+    float: unset;
+    top: 0;
+    padding: 0;
+    width: unset;
+  }
+  .project-item__images {
+    clear: both;
+    padding-top: unset;
+    padding-left: unset;
   }
 }

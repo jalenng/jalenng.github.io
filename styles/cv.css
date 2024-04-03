@@ -4,3 +4,13 @@ h2 {
   line-height: var(--line-height-b);
   text-transform: uppercase;
 }
+
+.project-item__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 4px;
+}
+
+.project-item__description {
+  font-family: var(--font-family-2);
+}

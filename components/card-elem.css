@@ -3,7 +3,8 @@
   height: 100%;
   aspect-ratio: 1.4;
   overflow: hidden;
-  border-radius: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
   pointer-events: none;
 }
 
@@ -30,11 +31,12 @@
   padding: 8px 16px;
   border-top: 1px solid var(--border);
   border-right: 1px solid var(--border);
-  border-top-right-radius: 8px;
+  border-top-right-radius: 4px;
   margin-right: 12px;
   position: absolute;
   bottom: 0;
   left: 0;
+  font-family: var(--font-family-2);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-b);
   line-height: var(--line-height-b);

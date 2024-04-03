@@ -1,0 +1,34 @@
+.project-item__button-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.project-item__images-wrap {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  > * {
+    position: absolute;
+  }
+  > * > img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    filter: var(--drop-shadow);
+  }
+  > :not(.no-border) > img {
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+}
+
+.project-item__count {
+  font-family: var(--font-family-2);
+  font-weight: var(--font-weight-bold);
+}
+
+.project-item__description {
+  font-family: var(--font-family-2);
+}

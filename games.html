@@ -10,6 +10,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="styles/global.css">
+  <link rel="stylesheet" type="text/css" href="styles/games.css">
 
   <!-- Favicon -->
   <link rel="icon" href="img/profile.png" />
@@ -20,14 +21,14 @@
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
 
   <!-- My components -->
   <script src="components/page-layout.js"></script>
   <script src="components/site-header.js"></script>
-  <script src="components/content-container.js"></script>
   <script src="components/project-item.js"></script>
-  <script src="components/carousel-elem.js"></script>
 </head>
 
 <body>
@@ -37,102 +38,119 @@
     <!-- header -->
     <site-header slot="nav" path="games"></site-header>
 
-    <content-container>
-      
-      <!-- Draw -->
-      <project-item id="draw">
-        <img slot="icon" src="img/games/draw-logo.png" alt="Draw logo" />
-        <h1 slot="title">Draw</h1>
-        <p slot="description">
-          A 2D sidescroller and artistic story-rich journey of grief and acceptance through the
-          doodles of Nathan, a high schooler dealing with the recent loss of a friend.
-        </p>
-        <carousel-elem slot="content">
-          <img src="img/games/draw-1.png" alt="Draw screenshot" draggable="false" />
-          <img src="img/games/draw-2.png" alt="Draw screenshot" draggable="false" />
-          <img src="img/games/draw-3.png" alt="Draw screenshot" draggable="false" />
-          <img src="img/games/draw-4.png" alt="Draw screenshot" draggable="false" />
-        </carousel-elem>
-        <p slot="footer-left">
-          <b>
-            Made in Unity with C#
-          </b>
-        </p>
-        <div slot="footer-right">
-          <a class="button primary" href="https://store.steampowered.com/app/2473980/Draw/" target="_blank"
-            rel="noopener noreferrer">
-            <span>Steam</span>
-            <i class="bi bi-steam"></i>
-          </a>
-          <a class="button" href="https://github.com/jalenng/Draw">
-            <span>GitHub</span>
-          </a>
+    <!-- Draw -->
+    <project-item id="draw">
+      <span class="project-item__count">01/03</span>
+      <h1>Draw</h1>
+      <p class="project-item__description">
+        A 2D sidescroller and artistic story-rich journey of grief and acceptance through the
+        doodles of Nathan, a high schooler dealing with the recent loss of a friend.
+      </p>
+      <p>
+        <b> Made in Unity with C# </b>
+      </p>
+      <div class="project-item__button-wrap">
+        <a class="button primary" href="https://store.steampowered.com/app/2473980/Draw/" target="_blank"
+          rel="noopener noreferrer">
+          <span>Steam</span>
+          <i class="bi bi-steam"></i>
+        </a>
+        <a class="button" href="https://github.com/jalenng/Draw">
+          <span>GitHub</span>
+        </a>
+      </div>
+      <div slot="images" class="project-item__images-wrap" style="aspect-ratio: 0.6">
+        <div style="left: 10%; top: 3%; width: 60%; rotate: -4.91deg;">
+          <img src="img/games/draw-1.png" alt="Draw screenshot" />
         </div>
-      </project-item>
-
-      <!-- what are you doing? -->
-      <project-item id="what-are-you-doing">
-        <img slot="icon" src="img/games/what-are-you-doing-logo.png" alt="what are you doing? logo" />
-        <h1 slot="title">what are you doing?</h1>
-        <p slot="description">
-          Created in 10 hours for the MADE @ THE MADE game jam.
-        </p>
-        <carousel-elem slot="content">
-          <img src="img/games/what-are-you-doing-1.png" alt="what are you doing? screenshot" draggable="false" />
-          <img src="img/games/what-are-you-doing-2.png" alt="what are you doing? screenshot" draggable="false" />
-        </carousel-elem>
-        <p slot="footer-left">
-          <b>
-            Made with HTML, CSS, and JS
-          </b>
-        </p>
-        <div slot="footer-right">
-          <a class="button primary" href="https://jaygantic.itch.io/what-are-you-doing" target="_blank"
-            rel="noopener noreferrer">
-            <span>itch.io</span>
-            <i class="bi bi-arrow-up-right"></i>
-          </a>
-          <a class="button" href="https://github.com/jalenng/what-are-you-doing">
-            <span>GitHub</span>
-          </a>
+        <div style="left: 33%; top: 24%; width: 60%; rotate: 4.43deg;">
+          <img src="img/games/draw-2.png" alt="Draw screenshot" />
         </div>
-      </project-item>
-
-      <!-- Radiating Happiness -->
-      <project-item id="radiating-happiness" hide-dashed-line>
-        <img slot="icon" src="img/games/radiating-happiness-logo.png" alt="Radiating Happiness logo" />
-        <h1 slot="title">Radiating Happiness</h1>
-        <p slot="description">
-          Dating simulator game based in a fictional university named Cupid University.
-        </p>
-        <carousel-elem slot="content">
-          <img src="img/games/radiating-happiness-1.png" alt="Radiating Happiness screenshot" draggable="false" />
-          <img src="img/games/radiating-happiness-2.png" alt="Radiating Happiness screenshot" draggable="false" />
-          <img src="img/games/radiating-happiness-3.png" alt="Radiating Happiness screenshot" draggable="false" />
-        </carousel-elem>
-        <p slot="footer-left">
-          <b>
-            Made in RenPy
-          </b>
-        </p>
-        <div slot="footer-right">
-          <a class="button primary" href="https://aryan-m.itch.io/radiating-happiness" target="_blank"
-            rel="noopener noreferrer">
-            <span>itch.io</span>
-            <i class="bi bi-arrow-up-right"></i>
-          </a>
-          <a class="button" href="https://play.google.com/store/apps/details?id=com.jaygantic.radiatinghappiness"
-            target="_blank" rel="noopener noreferrer">
-            <span>Google Play</span>
-            <i class="bi bi-arrow-up-right"></i>
-          </a>
-          <a class="button" href="https://github.com/aryanmaheshwari/RadiatingHappiness">
-            <span>GitHub</span>
-          </a>
+        <div style="left: 8%; top: 48%; width: 60%; rotate: -0.84deg;">
+          <img src="img/games/draw-3.png" alt="Draw screenshot" />
         </div>
-      </project-item>
+        <div style="left: 26%; top: 71%; width: 60%;  rotate: -6.45deg;">
+          <img src="img/games/draw-4.png" alt="Draw screenshot" />
+        </div>
+        <div class="no-border" style="left: 18%; top: 31%; width: 15%; rotate: -9.91deg; border-radius: 25%;">
+          <img src="img/games/draw-logo.png" alt="Draw logo" />
+        </div>
+      </div>
+    </project-item>
 
-    </content-container>
+    <!-- what are you doing? -->
+    <project-item id="what-are-you-doing">
+      <span class="project-item__count">02/03</span>
+      <h1>what are you doing?</h1>
+      <p class="project-item__description">
+        Created in 10 hours for the MADE @ THE MADE game jam.
+      </p>
+      <p>
+        <b> Made with HTML, CSS, and JS </b>
+      </p>
+      <div class="project-item__button-wrap">
+        <a class="button primary" href="https://jaygantic.itch.io/what-are-you-doing" target="_blank"
+          rel="noopener noreferrer">
+          <span>itch.io</span>
+          <i class="bi bi-arrow-up-right"></i>
+        </a>
+        <a class="button" href="https://github.com/jalenng/what-are-you-doing">
+          <span>GitHub</span>
+        </a>
+      </div>
+      <div slot="images" class="project-item__images-wrap" style="aspect-ratio: 1">
+        <div style="left: 32%;top: 51%;width: 60%;rotate: 9.02deg;">
+          <img src="img/games/what-are-you-doing-2.png" alt="what are you doing? screenshot" />
+        </div>
+        <div style="left: 8%;top: 8%;width: 60%;rotate: -4.93deg;">
+          <img src="img/games/what-are-you-doing-1.png" alt="what are you doing? screenshot" />
+        </div>
+        <div class="no-border" style="left: 72%;top: 5%;width: 20%;rotate: 21.09deg;border-radius: 25%;">
+          <img src="img/games/what-are-you-doing-logo.png" alt="what are you doing? logo" />
+        </div>
+      </div>
+    </project-item>
+
+    <!-- Radiating Happiness -->
+    <project-item id="radiating-happiness">
+      <span class="project-item__count">03/03</span>
+      <h1>Radiating Happiness</h1>
+      <p class="project-item__description">
+        Dating simulator game based in a fictional university named Cupid University.
+      </p>
+      <p>
+        <b> Made in RenPy </b>
+      </p>
+      <div class="project-item__button-wrap">
+        <a class="button primary" href="https://aryan-m.itch.io/radiating-happiness" target="_blank"
+          rel="noopener noreferrer">
+          <span>itch.io</span>
+          <i class="bi bi-arrow-up-right"></i>
+        </a>
+        <a class="button" href="https://play.google.com/store/apps/details?id=com.jaygantic.radiatinghappiness"
+          target="_blank" rel="noopener noreferrer">
+          <span>Google Play</span>
+          <i class="bi bi-arrow-up-right"></i>
+        </a>
+        <a class="button" href="https://github.com/aryanmaheshwari/RadiatingHappiness">
+          <span>GitHub</span>
+        </a>
+      </div>
+      <div slot="images" class="project-item__images-wrap" style="aspect-ratio: 0.8">
+        <div style="left: 35%;top: 6%;width: 60%;rotate: 8deg;">
+          <img src="img/games/radiating-happiness-1.png" alt="Radiating Happiness screenshot" />
+        </div>
+        <div style="left: 20.5%;top: 34.5%;width: 60%;rotate: -1.5;">
+          <img src="img/games/radiating-happiness-2.png" alt="Radiating Happiness screenshot" />
+        </div>
+        <div style="left: 10%;top: 65%;width: 60%;rotate: -11deg;">
+          <img src="img/games/radiating-happiness-3.png" alt="Radiating Happiness screenshot" />
+        </div>
+        <div class="no-border" style="left: 8%;top: 15%;width: 20%;rotate: -19.91deg;border-radius: 25%;">
+          <img src="img/games/radiating-happiness-logo.png" alt="Radiating Happiness logo" />
+        </div>
+      </div>
+    </project-item>
 
   </page-layout>
 

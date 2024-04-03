@@ -25,7 +25,8 @@ h2 {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-b);
   line-height: var(--line-height-b);
-  text-transform: uppercase;
+  font-family: var(--font-family-2);
+  text-transform: lowercase;
   margin-top: 32px;
   margin-bottom: 16px;
 }
