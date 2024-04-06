@@ -1,0 +1,36 @@
+.splash-text {
+  border-right: 1px solid var(--foreground);
+}
+
+.splash-text.blinking {
+  animation: blinkBorder 1.2s infinite steps(1);
+}
+
+.splash-text--word {
+  white-space: nowrap;
+}
+
+.splash-text--character {
+  white-space-collapse: preserve;
+  display: inline-block;
+  transition: opacity 0.2s ease-out, transform 0.2s var(--ease-out-back);
+  opacity: 0;
+  transform: scale(0.5) translateY(0.5em);
+}
+
+.enter {
+  opacity: 1;
+  transform: scale(1) translateY(0px);
+}
+
+@keyframes blinkBorder {
+  0% {
+    border-color: var(--foreground);
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: var(--foreground);
+  }
+}

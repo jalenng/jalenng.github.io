@@ -36,11 +36,14 @@ class ProjectItem extends HTMLElement {
     const options = {
       threshold: Array.from({ length: 101 }, (_, i) => i / 100),
     };
-    const intersectionObserver = new IntersectionObserver(
+    this.intersectionObserver = new IntersectionObserver(
       intersectionCallback,
       options
     );
-    intersectionObserver.observe(stickyElem);
+    this.intersectionObserver.observe(stickyElem);
+  }
+  disconnectedCallback() {
+    this.intersectionObserver?.disconnect?.();
   }
 }
 

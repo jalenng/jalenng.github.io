@@ -1,8 +1,13 @@
 h1 {
-  font-weight: var(--font-weight-light);
-
   margin-top: 64px;
   margin-bottom: 32px;
+  font-family: var(--font-family-2);
+  min-height: 2lh;
+  max-lines: 2;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h2 {
@@ -22,9 +27,11 @@ h2 {
 }
 
 .button-wrap {
+  margin: 64px 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
 }
 

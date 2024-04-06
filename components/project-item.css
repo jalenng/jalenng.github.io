@@ -2,8 +2,8 @@
   clear: both;
   /* --intersection-ratio is set by IntersectionObserver callback */
   --fade-scaled: calc(var(--intersection-ratio) * 2);
-  opacity: var(--fade-scaled);
   filter: blur(calc((1 - var(--fade-scaled)) * 8px));
+  opacity: var(--intersection-ratio);
 }
 
 .project-item__sticky {
