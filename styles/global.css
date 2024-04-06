@@ -215,3 +215,9 @@ a:active:not([disabled]) {
   padding-right: var(--content-container-padding-end);
   margin-bottom: 64px;
 }
+
+@media (prefers-reduced-motion) {
+  body {
+    --button-hover-transition: none;
+  }
+}
