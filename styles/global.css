@@ -88,8 +88,8 @@ body {
 
 h1,
 .text--body-xxxlarge {
-  font-size: var(--font-size-xxxl);
-  line-height: var(--line-height-xxxl);
+  font-size: var(--font-size-xxl);
+  line-height: var(--line-height-xxl);
 }
 
 /* Button */

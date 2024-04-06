@@ -38,7 +38,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     > * {
-      flex-grow: 1;
+      flex: 1 1 0px;
     }
+  }
+  .project-item__note {
+    display: none;
   }
 }
