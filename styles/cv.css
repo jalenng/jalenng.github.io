@@ -1,17 +1,40 @@
-h2 {
-  clear: both;
+section {
+  margin: 16px 0;
+
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px 24px;
+}
+
+h1 {
+  margin-top: 32px;
+  margin-bottom: 16px;
+
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-b);
   line-height: var(--line-height-b);
   text-transform: uppercase;
 }
 
-.project-item__icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 4px;
+h2 {
+  margin: 16px 0;
 }
 
-.project-item__description {
+.section__icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.section__subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.section__description {
   font-family: var(--font-family-2);
 }

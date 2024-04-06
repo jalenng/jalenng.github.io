@@ -22,12 +22,6 @@ body {
 
 /* Properties */
 body {
-  padding: 0;
-  margin: 0;
-
-  color: var(--foreground);
-  background-color: var(--background-primary);
-
   /* Animations */
   --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -39,32 +33,16 @@ body {
   /* Font */
   --font-family-1: "Inter", sans-serif;
   --font-family-2: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-style: normal;
-
-  font-size: var(--font-size-s);
-  line-height: var(--line-height-s);
 
   /* Type ramp */
-  --font-size-xxs: 0.625rem; /* 10px */
-  --font-size-xs: 0.75rem; /* 12px */
   --font-size-s: 0.875rem; /* 14px */
   --font-size-b: 1rem; /* 16px */
-  --font-size-l: 1.125rem; /* 18px */
-  --font-size-xl: 1.25rem; /* 20px */
-  --font-size-xxl: 1.5rem; /* 24px */
-  --font-size-xxxl: 2rem; /* 32px */
-  --font-size-xxxxl: 3rem; /* 48px */
+  --font-size-l: 1.5rem; /* 24px */
 
-  --line-height-xxs: calc(0.625rem * 1.5);
-  --line-height-xs: calc(0.75rem * 1.5);
-  --line-height-s: calc(0.875rem * 1.5);
-  --line-height-b: calc(1rem * 1.5);
-  --line-height-l: calc(1.125rem * 1.5);
-  --line-height-xl: calc(1.25rem * 1.5);
-  --line-height-xxl: calc(1.5rem * 1.5);
-  --line-height-xxxl: calc(2rem * 1.5);
-  --line-height-xxxxl: calc(3rem * 1.5);
+  /* Line height (https://www.thegoodlineheight.com/) */
+  --line-height-s: 1.5rem;
+  --line-height-b: 1.5rem;
+  --line-height-l: 2.5rem;
 
   --font-weight-light: 300;
   --font-weight-normal: 400;
@@ -72,24 +50,25 @@ body {
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  font-family: var(--font-family-1);
-}
+  /* Apply defaults */
+  padding: 0;
+  margin: 0;
 
-/* Font styles */
-.text--body-small {
+  font-family: var(--font-family-1);
+  font-optical-sizing: auto;
+  font-style: normal;
+
   font-size: var(--font-size-s);
   line-height: var(--line-height-s);
+
+  color: var(--foreground);
+  background-color: var(--background-primary);
 }
 
-.text--body-base {
-  font-size: var(--font-size-b);
-  line-height: var(--line-height-b);
-}
-
-h1,
-.text--body-xxxlarge {
-  font-size: var(--font-size-xxl);
-  line-height: var(--line-height-xxl);
+/* Headers */
+h1 {
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-l);
 }
 
 /* Button */

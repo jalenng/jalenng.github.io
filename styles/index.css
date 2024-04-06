@@ -1,6 +1,7 @@
 h1 {
   margin-top: 64px;
   margin-bottom: 32px;
+
   font-family: var(--font-family-2);
   min-height: 2lh;
   max-lines: 2;
@@ -11,13 +12,13 @@ h1 {
 }
 
 h2 {
+  margin-top: 32px;
+  margin-bottom: 16px;
+
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-b);
   line-height: var(--line-height-b);
   text-transform: uppercase;
-
-  margin-top: 32px;
-  margin-bottom: 16px;
 }
 
 .card-wrap {

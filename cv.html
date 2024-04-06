@@ -28,7 +28,6 @@
   <!-- My components -->
   <script src="components/page-layout.js"></script>
   <script src="components/site-header.js"></script>
-  <script src="components/project-item.js"></script>
 </head>
 
 <body>
@@ -38,19 +37,25 @@
     <!-- header -->
     <site-header slot="nav" path="cv"></site-header>
 
-    <h2>Work Experience</h2>
+    <h1>Work Experience</h1>
 
     <!-- zoom -->
-    <project-item id="zoom">
-      <img src="img/cv/zoom-logo.jpg" alt="Zoom logo" class="project-item__icon" />
-      <h1> Software Development Engineer </h1>
-      <p class="project-item__description">
-        Zoom Video Communications, Inc.
-      </p>
-      <p>
-        <b>San José, CA</b>
-      </p>
-      <ul slot="images">
+    <section id="zoom">
+      <h2>
+        <img src="img/cv/zoom-logo.jpg" alt="Zoom logo" class="section__icon" />
+        <span>
+          Software Development Engineer
+        </span>
+      </h2>
+      <div class="section__subtitle">
+        <span>
+          Zoom Video Communications, Inc. – <i>San José, CA</i>
+        </span>
+        <span>
+          <b> July 2022 – Present </b>
+        </span>
+      </div>
+      <ul class=" section__description">
         <li>
           Build and extend functionality to the desktop and mobile Zoom Mail Client with <b>Vue.js</b>
         </li>
@@ -67,23 +72,26 @@
           Contribute to a timely release of the Mail and Calendar service in a fast-paced work environment
         </li>
       </ul>
-      <p slot="footer-left">
-        <b> July 2022 - Present </b>
-      </p>
-      </div>
-    </project-item>
+    </section>
+    </section>
 
     <!-- student union inc. of sjsu -->
-    <project-item id="student-union-inc-of-sjsu">
-      <img src="img/cv/sjsu-logo.png" alt="SJSU logo" class="project-item__icon" />
-      <h1> Computer Services Technician </h1>
-      <p class="project-item__description">
-        Student Union Inc. of SJSU
-      </p>
-      <p>
-        <b>San José, CA</b>
-      </p>
-      <ul slot="images">
+    <section id=" student-union-inc-of-sjsu">
+      <h2>
+        <img src="img/cv/sjsu-logo.png" alt="SJSU logo" class="section__icon" />
+        <span>
+          Computer Services Technician
+        </span>
+      </h2>
+      <div class="section__subtitle">
+        <span>
+          Student Union Inc. of SJSU – <i>San José, CA</i>
+        </span>
+        <span>
+          <b> Nov. 2019 – May 2022 </b>
+        </span>
+      </div>
+      <ul class="section__description">
         <li>
           Resolved help-desk tickets and provided desktop support to 150+ employees across departments
         </li>
@@ -94,37 +102,37 @@
           Wrote <b>PowerShell</b> scripts to automate routine IT operations across 140+ computers
         </li>
       </ul>
-      <p slot="footer-left">
-        <b> Nov. 2019 - May 2022 </b>
-      </p>
       </div>
-    </project-item>
+    </section>
 
-    <h2>Education</h2>
+    <h1>Education</h1>
 
-    <project-item id="sjsu">
-      <img src="img/cv/sjsu-logo.png" alt="SJSU logo" class="project-item__icon" />
-      <h1> Bachelor of Science, Computer Science </h1>
-      <p class="project-item__description">
-        San José State University
-      </p>
-      <p>
-        <b>San José, CA</b>
-      </p>
-      <ul slot="images">
+    <section id="sjsu">
+      <h2>
+        <img src="img/cv/sjsu-logo.png" alt="SJSU logo" class="section__icon" />
+        <span>
+          Bachelor of Computer Science
+        </span>
+      </h2>
+      <div class="section__subtitle">
+        <span>
+          San José State University – <i>San José, CA</i>
+        </span>
+        <span>
+          <b> Aug. 2019 – May 2022 </b>
+        </span>
+      </div>
+      <ul class="section__description">
         <li>
-          Summa Cum Laude - GPA: 3.93
+          Summa Cum Laude – GPA: 3.93
         </li>
         <li>
           Coursework: Advanced C++, Advanced Python, Artificial Intelligence, Computer Graphics, Data Structures and
           Algorithms, Game Programming, Game Studies, Object-Oriented Design, Operating Systems, Technical Writing
         </li>
       </ul>
-      <p slot="footer-left">
-        <b> Aug. 2019 - May 2022 </b>
-      </p>
       </div>
-    </project-item>
+    </section>
 
   </page-layout>
 

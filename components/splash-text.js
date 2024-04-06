@@ -1,7 +1,7 @@
 const BEFORE_TYPE_DELAY = 1000;
 const MIN_TYPE_DELAY = 80;
 const MAX_TYPE_DELAY = 180;
-const BEFORE_DELETE_DELAY = 7000;
+const BEFORE_DELETE_DELAY = 5000;
 const DELETE_DELAY = 50;
 
 class SplashText extends HTMLElement {
@@ -24,9 +24,10 @@ class SplashText extends HTMLElement {
       "I like making stuff.",
       "Welcome.",
       "I like designing things.",
-      "This is my digital expression.",
+      "This is my creative expression.",
       "Check out the things I've made.",
-      "Night owl.",
+      "These are my digital creations.",
+      "I'm a night owl.",
     ];
   }
   connectedCallback() {

@@ -62,7 +62,7 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 480px) {
   .home-item {
     .tab-item__label {
       display: none;
