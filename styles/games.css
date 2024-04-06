@@ -32,3 +32,13 @@
 .project-item__description {
   font-family: var(--font-family-2);
 }
+
+@media only screen and (max-width: 800px) {
+  .project-item__button-wrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+    > * {
+      flex-grow: 1;
+    }
+  }
+}
