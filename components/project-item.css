@@ -3,9 +3,9 @@
   flex-direction: row;
 
   /* --intersection-ratio is set by IntersectionObserver callback */
-  --fade-scaled: calc(var(--intersection-ratio) * 2);
-  filter: blur(calc((1 - var(--fade-scaled)) * 8px));
-  opacity: var(--intersection-ratio);
+  --fade-scaled: calc(var(--intersection-ratio) * 1.5);
+  filter: blur(calc((1 - var(--fade-scaled)) * 16px));
+  opacity: var(--fade-scaled);
 }
 
 .project-item__sticky {
