@@ -13,11 +13,17 @@ h1 {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-b);
   line-height: var(--line-height-b);
+  letter-spacing: var(--letter-spacing-b);
   text-transform: uppercase;
 }
 
 h2 {
   margin: 16px 0;
+  
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-l);
+  letter-spacing: var(--letter-spacing-l);
 }
 
 .section__icon {

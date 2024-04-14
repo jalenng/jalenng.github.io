@@ -50,6 +50,7 @@
   padding-left: 8px;
   font-size: var(--font-size-b);
   line-height: var(--line-height-b);
+  letter-spacing: var(--letter-spacing-b);
 }
 
 .home-item {

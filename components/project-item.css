@@ -11,13 +11,10 @@
 .project-item__sticky {
   position: sticky;
   float: left;
-  top: 104px;
+  top: 72px;
   padding: 72px 0;
   width: 240px;
   height: fit-content;
-  & ::slotted(*) {
-    margin: 24px 0;
-  }
 }
 
 .project-item__images {
@@ -40,7 +37,7 @@
     bottom: 0;
     margin-top: -64px;
     padding-top: 64px;
-    padding-bottom: 8px;
+    padding-bottom: 32px;
     width: unset;
     z-index: 1;
     background-image: linear-gradient(

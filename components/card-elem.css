@@ -9,13 +9,21 @@
   border-radius: var(--border-radius);
 }
 
+.card-elem:hover {
+  .background {
+    transform: scale(1.04);
+    transition: transform 0.2s var(--ease-out-back);
+  }
+}
+
 .background {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  transform: rotate(-5.19deg) scale(1.12);
+  transition: transform 0.2s var(--ease-out-back);
+  transform: scale(1);
 }
 
 .background ::slotted(img) {
@@ -23,6 +31,7 @@
   height: 100%;
   object-position: center;
   object-fit: cover;
+  transform: rotate(-5.19deg) scale(1.13);
 }
 
 .foreground {
@@ -41,5 +50,6 @@
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-b);
   line-height: var(--line-height-b);
+  letter-spacing: var(--letter-spacing-b);
   filter: var(--drop-shadow);
 }

@@ -13,8 +13,8 @@
 
 .page-content {
   margin: auto;
-  margin-top: 100px;
-  margin-bottom: 72px;
+  margin-top: 72px;
+  margin-bottom: 32px;
   max-width: 1200px;
   padding: 0 32px;
   background-color: var(--background-primary);
