@@ -28,13 +28,13 @@ h1 {
       z-index: 1;
     }
   }
-  > * > img {
+  > * > * {
     display: block;
     width: 100%;
     object-fit: cover;
     filter: var(--drop-shadow);
   }
-  > :not(.no-border) > img {
+  > :not(.no-border) > * {
     border-radius: var(--border-radius);
     border: 1px solid var(--border);
   }
