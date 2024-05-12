@@ -4,7 +4,7 @@
 
   /* --intersection-ratio is set by IntersectionObserver callback */
   --fade-scaled: calc(var(--intersection-ratio) * 1.5);
-  filter: blur(calc((1 - var(--fade-scaled)) * 16px));
+  filter: blur(calc((1 - var(--fade-scaled)) * 4px));
   opacity: var(--fade-scaled);
 }
 

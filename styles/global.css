@@ -1,9 +1,9 @@
 /* Color tokens */
 :root {
   --foreground: #000000;
-  --background-primary: #f7f7f7;
+  --background-primary: #f7f7fc;
   --background-secondary: #ffffff;
-  --border: #b3b3b3;
+  --border: #b3b3b8;
   --drop-shadow: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1))
     drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.05))
     drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.025))
@@ -13,9 +13,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground: #f7f7f7;
-    --background-primary: #0d0d0d;
-    --background-secondary: #1a1a1a;
-    --border: #4d4d4d;
+    --background-primary: #0d0d0f;
+    --background-secondary: #1a1a1c;
+    --border: #4d4d52;
   }
 }
 
@@ -112,6 +112,7 @@ button:disabled {
 button:hover:not([disabled]) {
   transform: translate(0, -2px);
   box-shadow: 0px 2px 0px var(--border);
+  filter: var(--drop-shadow);
 }
 .button:active:not([disabled]),
 button:active:not([disabled]) {
@@ -191,6 +192,7 @@ a:hover:not([disabled]) {
   border: 1px solid var(--border);
   transform: translate(0, -2px);
   box-shadow: 0px 2px 0px var(--border);
+  filter: var(--drop-shadow);
 }
 a:active:not([disabled]) {
   transform: scale(0.97);
