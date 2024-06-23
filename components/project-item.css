@@ -1,11 +1,35 @@
 .project-item {
   display: flex;
   flex-direction: row;
+  scroll-snap-align: start;
 
-  /* --intersection-ratio is set by IntersectionObserver callback */
-  --fade-scaled: calc(var(--intersection-ratio) * 1.5);
-  filter: blur(calc((1 - var(--fade-scaled)) * 4px));
-  opacity: var(--fade-scaled);
+  animation-timeline: view(block);
+  animation-name: entrance, exit;
+  animation-fill-mode: both, forwards;
+  animation-timing-function: linear;
+  animation-duration: 1ms; /* Firefox requires this to apply the animation */
+  animation-range: entry 0% entry 33%, exit 67% exit 100%;
+}
+
+@keyframes entrance {
+  0% {
+    filter: blur(4px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes exit {
+  0% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  100% {
+    filter: blur(4px);
+    opacity: 0;
+  }
 }
 
 .project-item__sticky {
@@ -29,6 +53,7 @@
 @media only screen and (max-width: 800px) {
   .project-item {
     flex-direction: column-reverse;
+    min-height: 100vh;
     margin: 72px 0;
   }
   .project-item__sticky {
@@ -49,5 +74,7 @@
   .project-item__images {
     clear: both;
     padding-top: unset;
+    display: flex;
+    align-items: center;
   }
 }

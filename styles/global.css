@@ -59,10 +59,17 @@
   --border-radius: 4px;
 }
 
+/* Document */
+html {
+  overflow: hidden;
+}
+
 /* Apply defaults to body */
 body {
   padding: 0;
   margin: 0;
+  width: 100vw;
+  height: 100vh;
 
   font-family: var(--font-family-1);
   font-optical-sizing: auto;
@@ -74,6 +81,10 @@ body {
 
   color: var(--foreground);
   background-color: var(--background-primary);
+
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 72px;
 }
 
 /* Headers */
@@ -211,11 +222,11 @@ a:active:not([disabled]) {
 }
 
 /* Scrollbar */
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 32px;
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   border-radius: 16px;
   border: 14px solid transparent;
   background-color: var(--foreground);
