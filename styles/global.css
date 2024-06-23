@@ -59,17 +59,10 @@
   --border-radius: 4px;
 }
 
-/* Document */
-html {
-  overflow: hidden;
-}
-
 /* Apply defaults to body */
 body {
   padding: 0;
   margin: 0;
-  width: 100vw;
-  height: 100vh;
 
   font-family: var(--font-family-1);
   font-optical-sizing: auto;
@@ -81,10 +74,6 @@ body {
 
   color: var(--foreground);
   background-color: var(--background-primary);
-
-  overflow: auto;
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 72px;
 }
 
 /* Headers */

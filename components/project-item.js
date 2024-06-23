@@ -10,7 +10,7 @@ class ProjectItem extends HTMLElement {
       <link rel="stylesheet" href="components/project-item.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
       
-      <section class="project-item">
+      <section class="project-item animate-enter-exit">
 
         <div class="project-item__sticky">
           <slot></slot>
