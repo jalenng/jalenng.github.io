@@ -2,13 +2,17 @@
   display: flex;
   flex-direction: row;
   scroll-snap-align: start;
+}
 
-  animation-timeline: view(block);
-  animation-name: entrance, exit;
-  animation-fill-mode: both, forwards;
-  animation-timing-function: linear;
-  animation-duration: 1ms; /* Firefox requires this to apply the animation */
-  animation-range: entry 0% entry 33%, exit 67% exit 100%;
+@supports (animation-timeline: view(block)) {
+  .project-item {
+    animation-timeline: view(block);
+    animation-name: entrance, exit;
+    animation-fill-mode: both, forwards;
+    animation-timing-function: linear;
+    animation-duration: 1ms; /* Firefox requires this to apply the animation */
+    animation-range: entry 0% entry 33%, exit 67% exit 100%;
+  }
 }
 
 @keyframes entrance {
