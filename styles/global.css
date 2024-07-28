@@ -117,7 +117,7 @@ button:hover:not([disabled]) {
 .button:active:not([disabled]),
 button:active:not([disabled]) {
   transform: scale(0.97);
-  box-shadow: none;
+  box-shadow: 0px 0px 0px var(--border);
 }
 .button.primary,
 button.primary {
@@ -226,4 +226,13 @@ a:active:not([disabled]) {
   body {
     --button-hover-transition: none;
   }
+}
+
+/* Page transition */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-group(root) {
+  animation-duration: 0.2s;
 }
