@@ -60,16 +60,21 @@ class SiteHeader extends HTMLElement {
 
     const allowEasterEgg = this.hasAttribute("allow-easter-egg");
     if (allowEasterEgg) {
+      const maxBalls = 3;
+      let ballsSpawned = 0;
+
       // create event listener for button
       const tabButton = this.shadowRoot.querySelector("#home-tab");
       const buttonImg = this.shadowRoot.querySelector(".home-item-image");
-      tabButton.addEventListener("click", (e) => {
-        e.preventDefault();
+
+      const spawnBall = (e) => {
+        navigator.vibrate(1);
 
         const bounceDampening = 0.2;
         const gravity = 9.81;
         const growSpeed = 100;
         const terminalVy = 500;
+        const vThresholdForVibrate = 5;
 
         const initRect = buttonImg.getBoundingClientRect();
 
@@ -87,12 +92,36 @@ class SiteHeader extends HTMLElement {
         };
 
         let startTime;
+
+        function getWindowPosInfo() {
+          return {
+            left: window.screenX,
+            top: window.screenY,
+            right: window.screenX + window.innerWidth,
+            bottom: window.screenY + window.innerHeight,
+            width: window.innerWidth,
+            height: window.innerHeight,
+            scrollY: window.scrollY,
+          };
+        }
+
+        let lastWindowInfo = getWindowPosInfo();
+
         function updateBall(timestamp) {
+          const currWindowInfo = getWindowPosInfo();
+
           const timeDelta = (timestamp - startTime) / 100 || 0;
 
-          const minX = window.scrollX + ballData.radius;
-          const maxX = window.scrollX + window.innerWidth - ballData.radius;
-          const maxY = window.scrollY + window.innerHeight - ballData.radius;
+          const minX = ballData.radius;
+          const minY = -ballData.radius;
+          const maxX = currWindowInfo.width - ballData.radius;
+          const maxY = currWindowInfo.height - ballData.radius;
+
+          const windowDLeft = currWindowInfo.left - lastWindowInfo.left;
+          const windowDRight = currWindowInfo.right - lastWindowInfo.right;
+          const windowDTop = currWindowInfo.top - lastWindowInfo.top;
+          const windowDBottom = currWindowInfo.bottom - lastWindowInfo.bottom;
+          const scrollDY = currWindowInfo.scrollY - lastWindowInfo.scrollY;
 
           // Grow ball
           if (ballData.radius < ballData.targetRadius) {
@@ -102,6 +131,8 @@ class SiteHeader extends HTMLElement {
 
           // Update vy
           ballData.vy += gravity * timeDelta;
+          const scrollVy = timeDelta === 0 ? 0 : scrollDY / timeDelta;
+          ballData.vy -= scrollVy * 0.05;
           ballData.vy = Math.max(
             -terminalVy,
             Math.min(terminalVy, ballData.vy)
@@ -115,12 +146,46 @@ class SiteHeader extends HTMLElement {
           ballData.y += ballData.vy * timeDelta;
           ballData.rotation += ballData.vRot * timeDelta;
 
-          // Handle bounce
-          if (ballData.x <= minX || ballData.x >= maxX) {
+          // Account for screenX and screenY change to keep ball relative to window
+          ballData.x -= windowDLeft;
+          ballData.y -= windowDTop;
+          // ballData.y -= scrollDY;
+
+          // Handle bounce and edge interactions
+          let hasCollision = false;
+          let impulseVX = 0;
+          let impulseVY = 0;
+          // Left
+          if (ballData.x <= minX) {
+            hasCollision = true;
             ballData.vx *= -(1 - Math.random() * bounceDampening);
+            ballData.vx += windowDLeft / timeDelta;
+            impulseVX = ballData.vx;
           }
+          // Right
+          if (ballData.x >= maxX) {
+            hasCollision = true;
+            ballData.vx *= -(1 - Math.random() * bounceDampening);
+            ballData.vx += windowDRight / timeDelta;
+            impulseVX = ballData.vx;
+          }
+          // Top (just for preventing ball from going off screen)
+          if (ballData.y <= minY) {
+            // ballData.vy *= -(1 - Math.random() * bounceDampening);
+            ballData.vy = 0;
+          }
+          // Bottom
           if (ballData.y >= maxY) {
+            hasCollision = true;
             ballData.vy *= -(1 - Math.random() * bounceDampening);
+            ballData.vy -= windowDBottom / timeDelta;
+            impulseVY = ballData.vy;
+          }
+          if (hasCollision) {
+            const netImpulseV = Math.sqrt(impulseVX ** 2 + impulseVY ** 2);
+            if (netImpulseV > vThresholdForVibrate) {
+              navigator.vibrate(netImpulseV / 2);
+            }
           }
 
           // Clamp position
@@ -141,32 +206,45 @@ class SiteHeader extends HTMLElement {
           ballElem.style.borderRadius = `${50 * ballGrowRatio}%`;
           startTime = timestamp;
 
+          // Remember last window info
+          lastWindowInfo = currWindowInfo;
+
           requestAnimationFrame(updateBall);
         }
 
         // Create ballContainer
         const ballContainerElem = document.createElement("div");
-        ballContainerElem.style.position = "absolute";
+        ballContainerElem.style.position = "fixed";
         ballContainerElem.style.top = "0px";
         ballContainerElem.style.bottom = "0px";
         ballContainerElem.style.left = "0px";
         ballContainerElem.style.right = "0px";
         ballContainerElem.style.overflow = "hidden";
         ballContainerElem.style.pointerEvents = "none";
+        ballContainerElem.style.zIndex = "9999";
         document.body.appendChild(ballContainerElem);
 
         // Create ballElem
         const ballElem = document.createElement("img");
         ballElem.style.position = "absolute";
-        ballElem.style.zIndex = "9999";
         ballElem.style.transformOrigin = "center";
         ballElem.src = buttonImg.src;
         updateBall();
         ballContainerElem.appendChild(ballElem);
+      };
 
-        // Hide original image
-        // buttonImg.style.visibility = "hidden";
-      });
+      const handleTabButtonClick = (e) => {
+        e.preventDefault();
+        spawnBall(e);
+        ballsSpawned++;
+        if (ballsSpawned >= maxBalls) {
+          buttonImg.style.visibility = "hidden";
+          tabButton.removeEventListener("click", handleTabButtonClick);
+          tabButton.addEventListener("click", (e) => e.preventDefault());
+        }
+      };
+
+      tabButton.addEventListener("click", handleTabButtonClick);
     }
   }
 }
