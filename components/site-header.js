@@ -132,7 +132,7 @@ class SiteHeader extends HTMLElement {
           // Update vy
           ballData.vy += gravity * timeDelta;
           const scrollVy = timeDelta === 0 ? 0 : scrollDY / timeDelta;
-          ballData.vy -= scrollVy * 0.05;
+          ballData.vy -= scrollVy * 0.1;
           ballData.vy = Math.max(
             -terminalVy,
             Math.min(terminalVy, ballData.vy)

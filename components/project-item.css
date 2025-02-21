@@ -9,7 +9,7 @@
     animation-timeline: view(block);
     animation-name: entrance, exit;
     animation-fill-mode: both, forwards;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
     animation-duration: 1ms; /* Firefox requires this to apply the animation */
     animation-range: entry 0% entry 50%, exit 50% exit 100%;
   }

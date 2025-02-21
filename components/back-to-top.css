@@ -1,0 +1,51 @@
+.back-to-top {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 32px;
+  scroll-snap-align: start;
+}
+
+.back-to-top-button {
+  display: flex;
+  align-items: center;
+}
+
+.back-to-top-button--text {
+  padding-right: 8px;
+  display: none;
+}
+.back-to-top--subtext {
+  margin-top: 4px;
+  font-family: var(--font-family-2);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  letter-spacing: var(--letter-spacing-s);
+  text-transform: uppercase;
+}
+
+@supports (animation-timeline: view(block)) {
+  .animate-enter-exit {
+    animation-timeline: view(block);
+    animation-name: entrance, exit;
+    animation-fill-mode: both, forwards;
+    animation-timing-function: ease-out;
+    animation-duration: 1ms; /* Firefox requires this to apply the animation */
+    animation-range: entry 0% entry 100%;
+  }
+}
+
+@keyframes entrance {
+  0% {
+    filter: blur(4px);
+    opacity: 0;
+    transform: translate(0, 64px);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
