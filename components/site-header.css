@@ -10,8 +10,8 @@
   margin: 0;
   background-color: var(--background-secondary);
   color: var(--foreground);
-  overflow-x: auto;
-  overflow-y: hidden;
+  /* overflow-x: auto; */
+  /* overflow-y: hidden; */
   padding: 3px;
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
@@ -60,6 +60,19 @@
     border: 1px solid var(--foreground);
     border-radius: calc(var(--border-radius) * 0.5);
     box-sizing: border-box;
+  }
+}
+
+.pulsate {
+  animation: pulsate 2s infinite forwards;
+}
+
+@keyframes pulsate {
+  0% {
+    box-shadow: 0 0 0 0px var(--border);
+  }
+  67% {
+    box-shadow: 0 0 16px 32px transparent;
   }
 }
 

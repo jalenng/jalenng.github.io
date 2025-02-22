@@ -67,12 +67,14 @@ class SiteHeader extends HTMLElement {
       const tabButton = this.shadowRoot.querySelector("#home-tab");
       const buttonImg = this.shadowRoot.querySelector(".home-item-image");
 
+      tabButton.classList.add("pulsate");
+
       const spawnBall = (e) => {
         navigator.vibrate(1);
 
         const bounceDampening = 0.2;
         const gravity = 9.81;
-        const growSpeed = 100;
+        const growSpeed = 50;
         const terminalVy = 500;
         const vThresholdForVibrate = 5;
 
@@ -239,6 +241,7 @@ class SiteHeader extends HTMLElement {
         ballsSpawned++;
         if (ballsSpawned >= maxBalls) {
           buttonImg.style.visibility = "hidden";
+          tabButton.classList.remove("pulsate");
           tabButton.removeEventListener("click", handleTabButtonClick);
           tabButton.addEventListener("click", (e) => e.preventDefault());
         }
