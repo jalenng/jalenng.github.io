@@ -71,7 +71,7 @@
   0% {
     box-shadow: 0 0 0 0px var(--border);
   }
-  67% {
+  67%, 100% {
     box-shadow: 0 0 16px 32px transparent;
   }
 }

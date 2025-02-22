@@ -70,7 +70,7 @@ class SiteHeader extends HTMLElement {
       tabButton.classList.add("pulsate");
 
       const spawnBall = (e) => {
-        navigator.vibrate(1);
+        navigator.vibrate?.(1);
 
         const bounceDampening = 0.2;
         const gravity = 9.81;
@@ -186,7 +186,7 @@ class SiteHeader extends HTMLElement {
           if (hasCollision) {
             const netImpulseV = Math.sqrt(impulseVX ** 2 + impulseVY ** 2);
             if (netImpulseV > vThresholdForVibrate) {
-              navigator.vibrate(netImpulseV / 2);
+              navigator.vibrate?.(netImpulseV / 2);
             }
           }
 
